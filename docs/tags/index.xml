@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Q</title>
-    <link>https://www.19xx.dev/book/tags/</link>
+    <link>https://www.19xx.dev/tags/</link>
     <description>Recent content in Tags on Q</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://www.19xx.dev/book/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://www.19xx.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>development</title>
-      <link>https://www.19xx.dev/book/tags/development/</link>
+      <link>https://www.19xx.dev/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.19xx.dev/book/tags/development/</guid>
+      <guid>https://www.19xx.dev/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>https://www.19xx.dev/book/tags/go/</link>
+      <link>https://www.19xx.dev/tags/go/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.19xx.dev/book/tags/go/</guid>
+      <guid>https://www.19xx.dev/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>https://www.19xx.dev/book/tags/golang/</link>
+      <link>https://www.19xx.dev/tags/golang/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.19xx.dev/book/tags/golang/</guid>
+      <guid>https://www.19xx.dev/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://www.19xx.dev/book/tags/hugo/</link>
+      <link>https://www.19xx.dev/tags/hugo/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.19xx.dev/book/tags/hugo/</guid>
+      <guid>https://www.19xx.dev/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>templates</title>
-      <link>https://www.19xx.dev/book/tags/templates/</link>
+      <link>https://www.19xx.dev/tags/templates/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.19xx.dev/book/tags/templates/</guid>
+      <guid>https://www.19xx.dev/tags/templates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>https://www.19xx.dev/book/tags/themes/</link>
+      <link>https://www.19xx.dev/tags/themes/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://www.19xx.dev/book/tags/themes/</guid>
+      <guid>https://www.19xx.dev/tags/themes/</guid>
       <description></description>
     </item>
     
