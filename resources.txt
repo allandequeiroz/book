@@ -1,0 +1,2 @@
+https://4bes.nl/2021/08/29/create-a-website-with-hugo-and-github-pages/
+https://github.com/alex-shpak/hugo-book
