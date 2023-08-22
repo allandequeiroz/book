@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home). #   Before we start, I&rsquo;ll make some intro about the scenario and reasons for my choices, if you prefer, skip this part, the meat of the article starts at the Docker section.
+ A few days ago I decided to start a new side project, a tool that will take care of a bunch of things I need; I pay for different ones, and yet they don&rsquo;t cover everything I need.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Jenkins&#43;Kubernetes" />
+<meta property="og:description" content="How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home). #   Before we start, I&rsquo;ll make some intro about the scenario and reasons for my choices, if you prefer, skip this part, the meat of the article starts at the Docker section.
+ A few days ago I decided to start a new side project, a tool that will take care of a bunch of things I need; I pay for different ones, and yet they don&rsquo;t cover everything I need." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://19xx.dev/posts/0007-Jenkins&#43;Kubernetes/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" />
+
+<title>Jenkins&#43;Kubernetes | Q</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.66f61e5c41939131261027c7bd710ccbca33c9cad90a080ee96b7a26d5e457c0.js" integrity="sha256-ZvYeXEGTkTEmECfHvXEMy8ozycrZCggO6Wt6JtXkV8A=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Q</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Jenkins&#43;Kubernetes</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-setup-scalable-jenkins-on-top-of-a-kubernetes-cluster-at-home">How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home).</a>
+      <ul>
+        <li><a href="#assumptions">Assumptions</a></li>
+        <li><a href="#docker">Docker</a></li>
+        <li><a href="#kubernetes">Kubernetes</a></li>
+        <li><a href="#jenkins">Jenkins</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/0007-Jenkins&#43;Kubernetes/">Jenkins&#43;Kubernetes</a>
+  </h1>
+  
+  <h5>April 2, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/software/">software</a>, 
+      <a href="/categories/devops/">devops</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/docker/">docker</a>, 
+      <a href="/tags/kubernetes/">kubernetes</a>, 
+      <a href="/tags/containers/">containers</a>
+  </div>
+  
+
+
+
+<h1 id="how-to-setup-scalable-jenkins-on-top-of-a-kubernetes-cluster-at-home">
+  How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home).
+  <a class="anchor" href="#how-to-setup-scalable-jenkins-on-top-of-a-kubernetes-cluster-at-home">#</a>
+</h1>
+<blockquote>
+<p>Before we start, I&rsquo;ll make some intro about the scenario and reasons for my choices, if you prefer, skip this part, the meat of the article starts at the <strong>Docker</strong> section.</p>
+</blockquote>
+<p>A few days ago I decided to start a new side project, a tool that will take care of a bunch of things I need; I pay for different ones, and yet they don&rsquo;t cover everything I need. Since I have another excuse, and, it&rsquo;s for myself, I&rsquo;ve decided to go fully buzzword-compliant, something hard to achieve at work.</p>
+<p>One of the critical points is the building process of course, I could use Travis like I do some times but since the source code is private, and I have no intention to pay for Travis I&rsquo;ve decided to spin up a Jenkins running on top of my beloved home devices, later it may change, but for now it&rsquo;ll be like that.</p>
+<p>Just as a matter of fact, these are the devices I&rsquo;m talking about.</p>
+<p>
+  <img src="http://url/to/img.png" alt="Devices" /></p>
+<p>Another thing that worth to mention, the version I&rsquo;ll describe here is the first version I got working, the simplest one, accessing the master Jenkins through <code>NodePort</code>. The final version was a bit longer road and would make this article far longer it has two services, one for the <code>jnlp</code> of type <code>ClusterIP</code> and another one, the <code>http</code> of type <code>LoadBalancer</code>.</p>
+<p>The problem with the final version is that in my case <em>&ldquo;I&rsquo;m not sure if all this was really necessary&rdquo;</em> I had to use 
+  <a href="https://metallb.universe.tf/">Metallb</a> to have my internal bare metal Load Balancer also because of the 
+  <a href="https://en.wikipedia.org/wiki/Border_Gateway_Protocol">BGP</a> configuration, I had to flash my Netgear and replace its original firmware by 
+  <a href="https://dd-wrt.com/">dd-wrt</a> and also, a few other configurations here and there.</p>
+<p>If was necessary or not, at least it was quite fun.</p>
+<h2 id="assumptions">
+  Assumptions
+  <a class="anchor" href="#assumptions">#</a>
+</h2>
+<p>I&rsquo;ll assume that if you&rsquo;re here reading about 
+  <a href="https://jenkins.io/">Jenkins</a> and 
+  <a href="https://kubernetes.io/">Kubernetes</a> is because you already have some knowledge about any of the container runtime environments supported by Kubernetes, since I know only about 
+  <a href="https://www.docker.com/">Docker</a>, I&rsquo;ll stick with it.</p>
+<p>I&rsquo;ll assume as well that you already have your Kubernetes cluster up and running, with all the nodes ready to go, running a <code>kubectl get nodes -o wide</code> you should get enough information.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/731c7e4b54a1b06d9fb9ee0cecb2b9dd.js"></script> 
+<h2 id="docker">
+  Docker
+  <a class="anchor" href="#docker">#</a>
+</h2>
+<p>To start with, let&rsquo;s take a look at the Dockerfile, the idea here is to create a basic image ready to go with the initial necessary plugins. By ready to go I mean the latest version, interesting to know that the <code>latest</code> Jenkins image at Docker Hub doesn&rsquo;t contain the <code>latest</code> Jenkins version, if you tried to setup Jenkins before, you know what it means, many plugins will refuse work with an outdated Jenkins version.</p>
+<p>Lines 3 to 5 (see below) takes care of the platform update so the plugins will be happy when Jenkins starts. Luckily <code>updates.jenkins-ci.org</code> keeps a link to the <code>latest</code> bundle, so we need to point there and problem solved.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/0637e146d7b41517b83a6967aa897c06.js"></script>
+<p>To build this image you need to execute the following commands, please replace <code>allandequeiroz/jenkins</code> by <code>&lt;your user at docker hub&gt;/&lt;the name you prefer&gt;</code>.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/237860290b7e6e4c07358271f01c5456.js"></script>
+<p>The commands above will build and push the <code>latest</code> version. Alternatively, you can set a specific version as well.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/a12ecd09befca96e0672930938af72cb.js"></script>
+<h2 id="kubernetes">
+  Kubernetes
+  <a class="anchor" href="#kubernetes">#</a>
+</h2>
+<p>As mentioned before, for the sake of simplicity, I&rsquo;ll place here my initial working version, without load balancing capabilities, for this version you&rsquo;ll access your Jenkins instance at port <code>30000</code> of a fixed host, defined by a tag.</p>
+<blockquote>
+<p>If you prefer, you can see an alternative version 
+  <a href="https://gist.github.com/allandequeiroz-snippets/ec4d9457d03eb619b4b7e425839aeba3">here</a>. If what you need is more likely the alternative version, please read the first part of the article, before &ldquo;Assumptions&rdquo;, because you may need some more steps if you&rsquo;re deploying it at home.</p>
+</blockquote>
+<script src="https://gist.github.com/allandequeiroz-snippets/9287b002e32b2a938610740a2c5f00ec.js"></script>
+<p>A bit of explanation about this file:</p>
+<p><strong>Lines: 16-17</strong> - We&rsquo;re telling Jenkins to skip the initial wizard so we won&rsquo;t need to install any other plugin, set any password or get any hash from the logs right now when it starts, we&rsquo;ll go straight to business.</p>
+<p><strong>Lines: 26-28</strong> - We&rsquo;re mounting a volume at the master instance to keep our configurations alive across different deployments.</p>
+<p><strong>Lines: 31-32</strong> - These are the lines that define where Kubernetes will place your Jenkins master instance.</p>
+<p>Since you have <code>nodeSelector</code>, before you execute this file, you need to pick one of your nodes to host the Jenkins master, to do so, execute the lines below. Please replace <code>boss</code> by the name of your node.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/b0bb3ba04098b3e26f1fd0f9b60eb77f.js"></script>
+<p>The first line adds the label; the second one will give you a description about the node, look for <code>Labels:</code> you should see amongst the labels a line like <code>jenkins=master</code>.</p>
+<p>Assuming that you&rsquo;ve saved the <code>yaml</code> above in a file called <code>jenkins.yaml</code>, is time to apply it; to do so, you must be at your <strong>master</strong> host.</p>
+<blockquote>
+<p>This process sometimes turns to be a bit repetitive and tedious, if you prefer, use a shell script to make it a bit easier, 
+  <a href="https://gist.github.com/allandequeiroz-snippets/e4cd2bd63841f3b1878e709c47ca38fd">here</a> you&rsquo;ll find an example.</p>
+</blockquote>
+<script src="https://gist.github.com/allandequeiroz-snippets/947511b90004cb4258678e8195ce2848.js"></script>
+<p>If you&rsquo;ve executed 
+  <a href="https://gist.github.com/allandequeiroz-snippets/e4cd2bd63841f3b1878e709c47ca38fd">this script</a> you&rsquo;ll see an output similar to the one below, if not, copy and paste the first lines after the <code>echoes</code>, and I&rsquo;ll manage to see what you have so far.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/90bdcc80cee9595a311a315ea42fa83f.js"></script>
+<p>Notice that the service doesn&rsquo;t have any information about its public address, but we&rsquo;ve specified a host where Jenkins should be deployed <strong>the same one you labelled before</strong>, with this in hand and the <code>nodePort</code> we&rsquo;ve specified we have enough information to access Jenkins. In my case 
+  <a href="http://boss:30000">http://boss:30000</a></p>
+<h2 id="jenkins">
+  Jenkins
+  <a class="anchor" href="#jenkins">#</a>
+</h2>
+<p>Before jumping into the Kubernetes plugin configuration, let&rsquo;s take care of something essential, credentials. First, let&rsquo;s create a service account and fetch the secret.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/c8a0a3314fdfede28b95fc7785ae9d32.js"></script>
+<p>Copy the whole content printed at the console by the third command and go to <code>Jenkins &gt; Credentials &gt; System &gt; Global credentials &gt; Add Credentials</code>, change the <code>Kind</code> drop-down options to <code>Secret text</code> and past into <code>Secret</code>, set an <code>ID</code> to make it easy to pick it up later. There are many ways to handle credentials, but I&rsquo;ve picked this approach because I think it would be easier to set up different environments later.</p>
+<p>Now let&rsquo;s create our configuration at <code>Jenkins &gt; Manage Jenkins &gt; Configure System &gt; Add a new cloud &gt; Kubernetes</code></p>
+<p>Now, we&rsquo;ll need a few pieces of information to set up our Jenkins cluster:</p>
+<ul>
+<li><strong>Kubernetes URL:</strong> At the master node executes <code>kubectl cluster-info | grep master</code> and copy the URL you get there, for example, <code>https://192.168.1.101:6443</code>.</li>
+<li><strong>Credentials:</strong> Select the credentials we&rsquo;ve created at the previous step.</li>
+<li><strong>Jenkins tunnel:</strong> This information is critical to avoid falling into problems such as <code>connection refused</code> or <code>jnlp is not enabled</code>, you&rsquo;ll need to point to your service endpoint, do you remember the name of the service we&rsquo;ve provided at the <code>jenkins.yaml</code>? In this case it was <code>jenkins-master-svc</code> if you changed, get back there and double-check, we&rsquo;ll need it to build the service FQDN <code>&lt;service name&gt;.&lt;namespace&gt;.svc.cluster.local:&lt;port&gt;</code>, in this case, <code>jenkins-master-svc.default.svc.cluster.local:50000</code>.</li>
+</ul>
+<p>Anything else you can copy from the screenshots below at this time, after that, play around with the configurations until you get what you need.</p>
+<p>
+  <img src="http://url/to/img.png" alt="Cloud Kubernetes Block" /></p>
+<p>
+  <img src="http://url/to/img.png" alt="Kubernetes Pod Template Block" /></p>
+<p>Ok, now let&rsquo;s create some dummy build projects, a <code>Freestyle project</code> will do, at <code>Build &gt; Execute shell</code> add something silly to start with, for example <code>sleep 30</code>, this job will take a while to finish, and we manage to see multiple instances working in parallel. Create two of three to see it working for real.</p>
+<p>
+  <img src="http://url/to/img.png" alt="Kubernetes Pod Template Block" /></p>
+<p>Back to the main screen start building all of them and once you see new entries at <code>Build Executor Status</code> execute the following command to see their real status and the node where they are running at.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/c632aabbe3a3b66e2930216fb92ecde4.js"></script>
+<p>By the end, you should see the sunny Jenkins interface.</p>
+<p>
+  <img src="http://url/to/img.png" alt="Kubernetes Pod Template Block" /></p>
+<p>From this point you have your Jenkins cluster up and running, is up to you know to play with the many configuration options provided by the Kubernetes plugin and to set up your build projects.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){if(window.getSelection().toString())return;a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-to-setup-scalable-jenkins-on-top-of-a-kubernetes-cluster-at-home">How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home).</a>
+      <ul>
+        <li><a href="#assumptions">Assumptions</a></li>
+        <li><a href="#docker">Docker</a></li>
+        <li><a href="#kubernetes">Kubernetes</a></li>
+        <li><a href="#jenkins">Jenkins</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

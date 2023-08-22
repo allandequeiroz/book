@@ -7,56 +7,119 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>development</title>
-      <link>https://19xx.dev/tags/development/</link>
+      <title>container</title>
+      <link>https://19xx.dev/tags/container/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/tags/development/</guid>
+      <guid>https://19xx.dev/tags/container/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>go</title>
-      <link>https://19xx.dev/tags/go/</link>
+      <title>containers</title>
+      <link>https://19xx.dev/tags/containers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/tags/go/</guid>
+      <guid>https://19xx.dev/tags/containers/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>golang</title>
-      <link>https://19xx.dev/tags/golang/</link>
+      <title>core java</title>
+      <link>https://19xx.dev/tags/core-java/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/tags/golang/</guid>
+      <guid>https://19xx.dev/tags/core-java/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://19xx.dev/tags/hugo/</link>
+      <title>docker</title>
+      <link>https://19xx.dev/tags/docker/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/tags/hugo/</guid>
+      <guid>https://19xx.dev/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>templates</title>
-      <link>https://19xx.dev/tags/templates/</link>
+      <title>jackson</title>
+      <link>https://19xx.dev/tags/jackson/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/tags/templates/</guid>
+      <guid>https://19xx.dev/tags/jackson/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>themes</title>
-      <link>https://19xx.dev/tags/themes/</link>
+      <title>java</title>
+      <link>https://19xx.dev/tags/java/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/tags/themes/</guid>
+      <guid>https://19xx.dev/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://19xx.dev/tags/kubernetes/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://19xx.dev/tags/mongodb/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>https://19xx.dev/tags/spring/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://19xx.dev/tags/terraform/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thread</title>
+      <link>https://19xx.dev/tags/thread/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/thread/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>travis.ci</title>
+      <link>https://19xx.dev/tags/travis.ci/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/travis.ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>websockets</title>
+      <link>https://19xx.dev/tags/websockets/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/tags/websockets/</guid>
       <description></description>
     </item>
     
