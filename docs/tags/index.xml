@@ -7,47 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>container</title>
-      <link>https://19xx.dev/tags/container/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/container/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>containers</title>
-      <link>https://19xx.dev/tags/containers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/containers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>core java</title>
-      <link>https://19xx.dev/tags/core-java/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/core-java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>development</title>
       <link>https://19xx.dev/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://19xx.dev/tags/docker/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -75,87 +39,6 @@
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jackson</title>
-      <link>https://19xx.dev/tags/jackson/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/jackson/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>https://19xx.dev/tags/java/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://19xx.dev/tags/kubernetes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mongodb</title>
-      <link>https://19xx.dev/tags/mongodb/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>spring</title>
-      <link>https://19xx.dev/tags/spring/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/spring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>terraform</title>
-      <link>https://19xx.dev/tags/terraform/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/terraform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>thread</title>
-      <link>https://19xx.dev/tags/thread/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/thread/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travis.ci</title>
-      <link>https://19xx.dev/tags/travis.ci/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/travis.ci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>websockets</title>
-      <link>https://19xx.dev/tags/websockets/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/websockets/</guid>
       <description></description>
     </item>
     
