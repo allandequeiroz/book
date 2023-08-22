@@ -30,20 +30,20 @@ In the wake of unexpected leadership changes at AnotherInc Inc., Ethan, a previo
 
 -   Ethan – Vice President of Software Engineering
 -   Daveed – Director of Software Engineering
--   Marcus – Managing Director and Head of Alternatives Investment Engineering
+-   Marcus – Managing Director and Head of Fixed Income Investments Engineering
 
 ## Indirect:
 
--   Antonio – Former Managing Director and Head of Alternatives Investments Engineering
+-   Antonio – Former Managing Director and Head of Fixed Income Investments Engineering
 -   Kiko – Former Director of Software Engineering
 
 # Background
 
 AnotherInc Inc. is globally recognised as a leading investment management firm, specialising in areas such as risk management, strategic advisory and enterprise investment system services. Within the company, the environment is viewed from two distinct perspectives, one as a dynamic, challenging and rewarding environment, while the other is that of a high-pressure workplace demanding long hours and rigorous commitment.
 
-In 2019, Ethan joined AnotherInc as vice president, leading a software initiative to address a common challenge pervasive within the financial industry. Following two successful years and outstanding performance reviews, he transitioned to the fixed income investments business, where he worked directly with two widely recognised and respected figures within the corporation, Antonio and Kiko. One of Ethan's first tasks was building a new software engineering team for a recently approved three-year project. However, during the initial phases, and with a few team members already onboarded, Antonio and Kiko abruptly left AnotherInc.
+In 2019, Ethan joined AnotherInc as vice president, leading a software initiative to address a common challenge pervasive within the financial industry. Following two successful years and outstanding performance reviews, he transitioned to the Fixed Income Investments business, where he worked directly with two widely recognised and respected figures within the corporation, Antonio and Kiko. One of Ethan's first tasks was building a new software engineering team for a recently approved three-year project. However, during the initial phases, and with a few team members already onboarded, Antonio and Kiko abruptly left AnotherInc.
 
-Marcus, who had previously held a senior position in Jafar's Mutual Funds engineering, was announced as Antonio's successor in the role of head of fixed income investments engineering. On his appointment, he immediately began to rework the initiatives Antonio had previously set in motion. These modifications affected everyone on the team, including Ethan, who was mentoring new hires at that time. The dynamics took a further turn for the worse when Marcus overlooked Ethan, who was next in line following Kiko's departure, and instead appointed Daveed, someone Marcus had previously hired to work alongside him in the Mutual Funds business.
+Marcus, who had previously held a senior position in Jafar's Mutual Funds engineering, was announced as Antonio's successor in the role of head of Fixed Income Investments engineering. On his appointment, he immediately began to rework the initiatives Antonio had previously set in motion. These modifications affected everyone on the team, including Ethan, who was mentoring new hires at that time. The dynamics took a further turn for the worse when Marcus overlooked Ethan, who was next in line following Kiko's departure, and instead appointed Daveed, someone Marcus had previously hired to work alongside him in the Mutual Funds business.
 
 The professional relationships that Ethan had previously fostered with Antonio and Kiko were straightforward and open, facilitating fluid communication. However, things changed under Marcus and Daveed, a shift Ethan initially failed to recognise. On two separate occasions, Ethan publicly shared his professional opinions, which contradicted those of Marcus and Daveed. These interactions were not well-received, leading to a significant shift in their attitudes towards Ethan.
 
