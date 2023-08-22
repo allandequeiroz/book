@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
+Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
+Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&rsquo;m moving to a new place, so I have a new excuse to play with something else.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Terraform" />
+<meta property="og:description" content="TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
+Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
+Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&rsquo;m moving to a new place, so I have a new excuse to play with something else." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://19xx.dev/posts/0005-Terraform/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" />
+
+<title>Terraform | Q</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.6cf06c23644b6c67382defecd82907258c6193dd7fa72446116a3eb928978e1e.js" integrity="sha256-bPBsI2RLbGc4Le/s2CkHJYxhk91/pyRGEWo&#43;uSiXjh4=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Q</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Terraform</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-infrastructure-configuration-using-terraform-docker-ghost-traefik-and-cloudflare">Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare.</a>
+      <ul>
+        <li><a href="#docker">Docker</a>
+          <ul>
+            <li><a href="#ghost-and-traefik">Ghost and Traefik</a></li>
+          </ul>
+        </li>
+        <li><a href="#traefik">Traefik</a></li>
+        <li><a href="#terraform">Terraform</a>
+          <ul>
+            <li><a href="#ec2">EC2</a></li>
+            <li><a href="#cloudflare">Cloudflare</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/0005-Terraform/">Terraform</a>
+  </h1>
+  
+  <h5>April 2, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/software/">software</a>, 
+      <a href="/categories/devops/">devops</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/docker/">docker</a>, 
+      <a href="/tags/containers/">containers</a>, 
+      <a href="/tags/terraform/">terraform</a>
+  </div>
+  
+
+
+
+<p>TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).</p>
+<p>Source code: 
+  <a href="https://github.com/allandequeiroz/blog/tree/extract_variables">https://github.com/allandequeiroz/blog/tree/extract_variables</a></p>
+<h1 id="basic-infrastructure-configuration-using-terraform-docker-ghost-traefik-and-cloudflare">
+  Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare.
+  <a class="anchor" href="#basic-infrastructure-configuration-using-terraform-docker-ghost-traefik-and-cloudflare">#</a>
+</h1>
+<p>For a while, I&rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&rsquo;m moving to a new place, so I have a new excuse to play with something else.</p>
+<p>The idea at this time is simply to provide the infrastructure on EC2 using Terraform, set up the DNS entries and keep the blog alive, later on, I&rsquo;ll see what can I do with Kubernetes and perhaps include some load-balancing and autoscaling as well (even completely unnecessary due the low traffic) but for now let&rsquo;s take a look at the current configurations:</p>
+<ul>
+<li>Docker (docker-compose)
+<ul>
+<li>Ghost</li>
+<li>Traefik</li>
+</ul>
+</li>
+<li>Traefik (toml)</li>
+<li>Terraform
+<ul>
+<li>EC2</li>
+<li>Cloudflare</li>
+</ul>
+</li>
+</ul>
+<h2 id="docker">
+  Docker
+  <a class="anchor" href="#docker">#</a>
+</h2>
+<h3 id="ghost-and-traefik">
+  Ghost and Traefik
+  <a class="anchor" href="#ghost-and-traefik">#</a>
+</h3>
+<p>Different from my previous setup, at this time I&rsquo;ve decided to move out from my customized Ghost version and start using a vanilla one provided by Ghost&rsquo;s maintainers available on Docker hub, the only thing to keep was the <code>config.production.json</code> file to set details such as port, database and content placement; if you want to check this file, it&rsquo;s available at the 
+  <a href="https://github.com/allandequeiroz/blog/tree/extract_variables">repository</a>.</p>
+<p>Also, to play with something new, I&rsquo;ve replaced NGINX by Traefik; it was quite interesting to know that Traefik deals with all the underline details also is quite dynamic in terms of self-reconfiguration, we give it a <code>.toml</code> file and the tricks start to happen; we&rsquo;ll see a bit more later on, for now, let&rsquo;s have a look at the <code>docker-compose</code> file.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/7b28115a214bd7cefe87086b2b035784.js"></script>
+<p>As you can see, there are not so many details; we&rsquo;re basically specifying two services, a network and setting up some labels to help Traefik does its job. The volumes mappings are mostly optional but, here we&rsquo;re placing some existing configuration and persisting data outside of the containers, at the host file system, no strict rules here as well, in this case for example, since I&rsquo;ve told Ghost that the content path is <code>/var/lib/ghost/content</code> a volume was mounted at this same location so the whole data will be persisted at the host FS, the volumes' snapshots will have the same content, so when new EC2 instances are launched, data from previous instances will be present.</p>
+<p>The labels as mentioned before are to help Traefik but for now just notice the mapping to <code>docker.sock</code>, if you&rsquo;re not familiar with its usage, is basically the Unix socket that the Docker daemon listens to so containers can communicate with it from within, basically containers are able to consume the 
+  <a href="https://docs.docker.com/develop/sdk/">API</a> through the socket. Traefik, in this case, observe the Docker events through the API and depending on the events, decides what to do about the current configuration, if something needs to be destroyed, created, recreated, changed and so on.</p>
+<h2 id="traefik">
+  Traefik
+  <a class="anchor" href="#traefik">#</a>
+</h2>
+<p>Traefik is a very clever reverse proxy; it deals by itself with many complexities for a low price in terms of configuration as you can see below.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/05082c5c1ec241c7f5470e3c43a7f02a.js"></script>
+<p>From this short configuration we have support to HTTP/HTTPS, ports configuration, the whole boilerplate to generate our certificates with 
+  <a href="https://letsencrypt.org">Let&rsquo;s Encrypt</a> and a dashboard.</p>
+<blockquote>
+<p>Concerning the dashboard, worth to mention that using the [api] section exposes Traefik&rsquo;s configuration so remember to secure it with some authentication/authorization mechanism, in this example basic auth was used, when hitting the dashboard URL a pop up asking for credentials will be prompted. The password is generated by <code>htpasswd</code> for example <code>echo $(htpasswd -nb &lt;USER&gt; password) | sed -e s/\\$/\\$\\$/g</code></p>
+</blockquote>
+<h2 id="terraform">
+  Terraform
+  <a class="anchor" href="#terraform">#</a>
+</h2>
+<p>Now let&rsquo;s have a look at the Terraform infrastructure definition for both EC2 and Cloudflare, I think a few things should be mentioned.</p>
+<ul>
+<li>First, there many ways to define and load variables with Terraform but the ones at this example are being loaded from the environment, when Terraform is executed it&rsquo;ll start the lookup, the environment variables prefixed with <code>TF_VAR</code> will be considered by Terraform. As an example, at the <code>.tf</code> file we have the variable <code>aws_access_key_id</code>, the defined environment variable was <code>TF_VAR_aws_access_key_id</code>, for Terraform it&rsquo;s a match.</li>
+<li>Second, we can break down the configurations as much as we want, just keep in mind that the files are loaded in alphabetical order, in this case it worked fine since Terraform will start from __<u>a</u>__ws.tf then proceed with __<u>c</u>__loudflare.tf. A necessity here since to define the DNS entries the EC2 instance IP address should be defined already.</li>
+<li>Third, the <code>remote-exec</code> is not the most optimal approach, would be possible, for example, to have AMIs ready to go with everything necessary installed and configured beforehand.</li>
+</ul>
+<h3 id="ec2">
+  EC2
+  <a class="anchor" href="#ec2">#</a>
+</h3>
+<p>As said before, you can have a look at the full files at the 
+  <a href="https://github.com/allandequeiroz/blog/tree/extract_variables">repository</a>, but here, I&rsquo;ll break down in sections to give a short explanation for each one.</p>
+<ol>
+<li><strong>Variables</strong> definitions, to make our configuration flexible/reusable also to hide sensitive information.</li>
+<li><strong>Virtual Private Cloud (VPC)</strong> since a VPC is not like a regular datacenter with networks, switches, routers and so on but, instead, software-defined, we need(optional in fact) to define a private(isolated) section of the Cloud to launch our instances.</li>
+<li><strong>VPC Subnet</strong> once defined our private Cloud; we need to specify our subnet to provide the behaviours we want, in this case, the subnet is associated with an Internet Gateway, turning this particular subnet into a public one so we can access this particular network space from the external world.</li>
+<li><strong>Internet Gateway</strong> as mentioned above, the intention here is to make a particular subnet accessible from the internet, the gateway will work with the subnet to make it happen.</li>
+<li><strong>Route Table</strong> definition into the VPC to route traffic to the Internet Gateway.</li>
+<li><strong>Route Table Association</strong> to &ldquo;link&rdquo; a Subnet with a Route Table.</li>
+<li><strong>Security Group</strong> to be used inside the VPC (this example shouldn&rsquo;t be used in production, it&rsquo;s exceptionally permissive).</li>
+<li><strong>Amazon Machine Image (AMI)</strong> to specify details such as a particular image to be used to start new instances or to attaching a previously taken volume snapshot for example.</li>
+<li><strong>Key Pair</strong> to provide access to the instance over SSH.</li>
+<li><strong>EC2 Instance</strong> a description of how a new instance should look like, where and how it should be placed, for example, into which subnet, the Security Group to be used, Key Pair, which Volume Snapshot to be also used to execute commands over SSH. Many thinks are possible here; the previous description is about the context of this example.</li>
+</ol>
+<p>With this in mind, let&rsquo;s have a look at each of these sections.</p>
+<p><strong><u>Variables</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/85c71f82c0d94b09ca184bdfa895513b.js"></script>
+<p>As mentioned before, Terraform allows us to define variables so we can make our configurations more flexible also keep sensitive information out of sight, one interesting detail is that we can define default values, for example, we could have something like</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/9ce17ab44a057e1c07dc0404c8cee675.js"></script>
+<p><strong><u>VPC</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/6101a024c2cd3d5a10bd103c909123b2.js"></script>
+<p>The intention of defining a VPC is to have complete control but is not, in fact, a necessity, in case we skip this definition, a default one will be provided by AWS, but of course, AWS won&rsquo;t guess what we intend.</p>
+<p><strong><u>VPC Subnet</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/3abc6e832f8444af9bd20664b9c0ead5.js"></script>
+<p>The subnet definition is also important, in this case, there&rsquo;s nothing fancy going on, but we could use it to create different subnets some to be exposed and some to be completely private.</p>
+<p><strong><u>Internet Gateway</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/9fc7f76010d74b2b324335360c2daab8.js"></script>
+<p>To achieve the goal of routing internet traffic into the VPC, we need to specify an Internet Gateway.</p>
+<p><strong><u>Route Table</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/a1745b5b2f560daa9568d0a66e171c8f.js"></script>
+<p>The route table is what we use in association with the gateway to exposing a particular subnet to the internet.</p>
+<p><strong><u>Route Table Association</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/2655b28843fc979510d9e693683dbd52.js"></script>
+<p>This small section is the glue between a subnet and a route table; we use it to put them together.</p>
+<p><strong><u>Security Group</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/9a789ffd1580eea7292893b10d4280d2.js"></script>
+<p>By default, AWS allows all traffic to go outside but terraform doesn&rsquo;t so we need to state this definition explicitly, in this case, in and out.</p>
+<p><strong><u>AMI</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/9cdfdbdb977972dc28b153f4d58f802c.js"></script>
+<p>This section is important to define how the instances should &ldquo;look like&rdquo;, in this case, as you can see, we have three sections.</p>
+<ul>
+<li>data: <code>aws_ebs_snapshot</code> to lookup for a specific volume snapshot to be mounted when creating new instances.</li>
+<li>data: <code>aws_ami</code> to lookup for a specific <code>AMI</code> to be used as a base for the new instance.</li>
+<li>resource: <code>aws_ami</code> to state the definitions of how the instances should be created, you can see that we&rsquo;ve made use of both filterings we&rsquo;ve defined above, one to set the <code>block device</code> and another to set which particular <code>AMI</code> to be used when instantiating.</li>
+</ul>
+<p>The snapshots are taken automatically, the periodicity and target were defined beforehand through the Elastic Block Store Lifecycle Manager.</p>
+<p><strong><u>Key Pair</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/d107de5724a2057bb5ebacab27523d90.js"></script>
+<p>Here is the definition of which Key Pair to be associated with the new instances, this way if in possession of the <code>.pem</code> file, access to the instance over SSH is possible.</p>
+<p><strong><u>EC2 Instance</u></strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/23051bf7a58325e059747dfd52dd9aea.js"></script>
+<p>Ok, here is where we put everything together that&rsquo;s why this section is slightly bigger, but if you read it line by line, you&rsquo;ll notice that now we&rsquo;re only setting values using what was defined before so you can see that there are only three sections.</p>
+<ul>
+<li><strong>Values definitions</strong> the first seven lines where the values are coming from what was configured before.</li>
+<li><strong>Connection configuration</strong> lines from nine to fourteen are describing how the connectivity should work.</li>
+<li><strong>Commands</strong> the remaining lines (except for the tag definition) are the commands to be executed while spinning up a new instance.</li>
+</ul>
+<p>The interesting thing here is about <code>remote-exec</code> because Docker is being installed and its service needs to be started; a new connection should happen, permissions also won&rsquo;t work correctly if the connection is not closed, only from a new session the remaining commands will work appropriately.</p>
+<p>Another detail to is the usage of tags, once the infrastructure is created, these tags will be present on each of these parts, they&rsquo;re handy for organization and filtering purposes, at the end of the day I was feeling like tagging here was so important and useful as if I was doing something on Kubernetes for example.</p>
+<h3 id="cloudflare">
+  Cloudflare
+  <a class="anchor" href="#cloudflare">#</a>
+</h3>
+<ol>
+<li><strong>A</strong> record defining the target domain, associated with the new instance IP address (we could be pointing to an LB for example).</li>
+<li><strong>Canonical Name record (CNAME)</strong> to provide www. subdomain.</li>
+<li><strong>Canonical Name record (CNAME)</strong> to provide access to Traefik dashboard, do you remember the labels at the <code>docker-compose.yml</code>? We&rsquo;ve defined two <code>traefik.frontend.rule</code> entries, one for Ghost and another to Traefik so, given the requested URL, Traefik will redirect the request to the correct container.</li>
+</ol>
+<script src="https://gist.github.com/allandequeiroz-snippets/aeff598656aaefa75ec0fbe8db247f05.js"></script>
+<p>The Cloudflare configuration is not extensive so let&rsquo;s keep it as a single piece, there&rsquo;s nothing mythical here but one line that worth to mention is the line 12. Here the IP associated with the new instance is taken and set to the new DNS entry, at first I got some errors at this part because the IP wasn&rsquo;t yet defined, the line <code>cloud-init status --wait</code> at the end of the <code>aws_instance</code> creation tackles this problem, it will make Terraform wait until AWS finishes its job before carrying on with Cloudflare.</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<p>After playing with this, apart of the usual excitement, it feels like we need something more powerful to work with configurations, I can imagine the number of files and probably untrackable repetitions for more complex configurations, fingers crossed that we have something better any time soon, maybe 
+  <a href="https://dhall-lang.org/#">Dhall</a> will be better and yet safe option, who knows.</p>
+<p>So even with the current configuration scenario is quite fun to go through all this and see a whole infrastructure being created/destroyed in a matter of seconds thanks to the automation capabilities, tools and options available we have these days.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){if(window.getSelection().toString())return;a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#basic-infrastructure-configuration-using-terraform-docker-ghost-traefik-and-cloudflare">Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare.</a>
+      <ul>
+        <li><a href="#docker">Docker</a>
+          <ul>
+            <li><a href="#ghost-and-traefik">Ghost and Traefik</a></li>
+          </ul>
+        </li>
+        <li><a href="#traefik">Traefik</a></li>
+        <li><a href="#terraform">Terraform</a>
+          <ul>
+            <li><a href="#ec2">EC2</a></li>
+            <li><a href="#cloudflare">Cloudflare</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

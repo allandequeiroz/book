@@ -7,6 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Building Docker images on Travis.ci</title>
+      <link>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</guid>
+      <description>Olá!
+Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
+So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&amp;rsquo;s right, you&amp;rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!</description>
+    </item>
+    
+    <item>
+      <title>BuildingBlocks</title>
+      <link>https://19xx.dev/posts/0003-BuildingBlocks/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0003-BuildingBlocks/</guid>
+      <description>Olá!
+Today I would like to write a bit about Java Collections. I believe most of us that already played with Java know about the primary and most used classes in the Java Collections framework, at least ones that ever had an interview are familiar with, they are part of the default pack of questions that interviewers ask to check if you at least read about Java.
+But this post does not intend to talk about the different aspects of data structures, or when to use A or B, the idea is to speak briefly about collections in a concurrent context.</description>
+    </item>
+    
+    <item>
       <title>Getting Started with Hugo</title>
       <link>https://19xx.dev/posts/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
@@ -17,6 +39,70 @@ Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at Install Hugo
 Step 2. Build the Docs #  Hugo has its own example site which happens to also be the documentation site you are reading right now.
 Follow the following steps:</description>
+    </item>
+    
+    <item>
+      <title>Home made Kubernetes cluster</title>
+      <link>https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/</guid>
+      <description>Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&amp;rsquo;t a 5 minutes task I&amp;rsquo;ll describe here the steps I went through to get it working.
+Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&amp;rsquo;ll be used as a reference here.</description>
+    </item>
+    
+    <item>
+      <title>Jackson field converters</title>
+      <link>https://19xx.dev/posts/0008-Jackson-field-converters/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0008-Jackson-field-converters/</guid>
+      <description>Custom serialisation with Jackson at field level #  Quick one to not forget since is quite useful. How to specify custom serializers at field level.
+The example here is a bit ridiculous but a few days ago I needed it for a real scenario and was quite hand so, ignore the example since I couldn&amp;rsquo;t think about anything better and keep your focus on how handy it may be.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins&#43;Kubernetes</title>
+      <link>https://19xx.dev/posts/0007-Jenkins&#43;Kubernetes/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0007-Jenkins&#43;Kubernetes/</guid>
+      <description>How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home). #   Before we start, I&amp;rsquo;ll make some intro about the scenario and reasons for my choices, if you prefer, skip this part, the meat of the article starts at the Docker section.
+ A few days ago I decided to start a new side project, a tool that will take care of a bunch of things I need; I pay for different ones, and yet they don&amp;rsquo;t cover everything I need.</description>
+    </item>
+    
+    <item>
+      <title>Terraform</title>
+      <link>https://19xx.dev/posts/0005-Terraform/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0005-Terraform/</guid>
+      <description>TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
+Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
+Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&amp;rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&amp;rsquo;m moving to a new place, so I have a new excuse to play with something else.</description>
+    </item>
+    
+    <item>
+      <title>ThreadSafety</title>
+      <link>https://19xx.dev/posts/0002-ThreadSafety/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0002-ThreadSafety/</guid>
+      <description>Olá!
+A few days ago I ended up into this StackOverflow thread from almost seven years ago, this guy was getting inconsistent results from a multithread code. Well, looked like an excellent excuse to recall some topics and do some new research.
+To start with, let&amp;rsquo;s just quickly remember the differences between Multiprogramming, Multiprocessing, Multitasking, and Multithreading.
+Multiprogramming #  In a multiprogramming environment more than one program can be loaded to the main memory, but only one will use the CPU to execute instructions, inside this sort of environment programs that are not using CPU are waiting their turn, but off course this is not acceptable, imagine if the same program hold the CPU for 1h?</description>
+    </item>
+    
+    <item>
+      <title>Websockets</title>
+      <link>https://19xx.dev/posts/0001-Websockets/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0001-Websockets/</guid>
+      <description>Olá!
+Today post is about a small experiment using Spring 5 to play with WebFux, I&amp;rsquo;ve used it to create a small WebSocket controller to &amp;ldquo;simulate&amp;rdquo; an e-mail inbox. The idea was to send some dummy text to the backend, persist it on MongoDB and from time to time check for new messages and send it to the clients connected to the WebSocket endpoint.
+The Cast #  Let&amp;rsquo;s see an overview of all actors involved in this small experiment.</description>
     </item>
     
   </channel>

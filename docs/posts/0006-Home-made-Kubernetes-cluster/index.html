@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&rsquo;t a 5 minutes task I&rsquo;ll describe here the steps I went through to get it working.
+Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&rsquo;ll be used as a reference here.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Home made Kubernetes cluster" />
+<meta property="og:description" content="Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&rsquo;t a 5 minutes task I&rsquo;ll describe here the steps I went through to get it working.
+Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&rsquo;ll be used as a reference here." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2014-04-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" />
+
+<title>Home made Kubernetes cluster | Q</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.6cf06c23644b6c67382defecd82907258c6193dd7fa72446116a3eb928978e1e.js" integrity="sha256-bPBsI2RLbGc4Le/s2CkHJYxhk91/pyRGEWo&#43;uSiXjh4=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Q</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Home made Kubernetes cluster</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#homemade-kubernetes-cluster">Homemade Kubernetes Cluster</a>
+      <ul>
+        <li><a href="#pre-checks">Pre-checks</a></li>
+        <li><a href="#docker">Docker</a>
+          <ul>
+            <li><a href="#docker-compose">Docker Compose</a></li>
+            <li><a href="#docker-compose-bash-autocompletion">Docker Compose bash autocompletion</a></li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#initialising-master-kubernetes">Initialising Master Kubernetes</a></li>
+            <li><a href="#kubernetes-autocompletion">Kubernetes autocompletion</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/0006-Home-made-Kubernetes-cluster/">Home made Kubernetes cluster</a>
+  </h1>
+  
+  <h5>April 2, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/software/">software</a>, 
+      <a href="/categories/devops/">devops</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/docker/">docker</a>, 
+      <a href="/tags/kubernetes/">kubernetes</a>, 
+      <a href="/tags/containers/">containers</a>
+  </div>
+  
+
+
+
+<h1 id="homemade-kubernetes-cluster">
+  Homemade Kubernetes Cluster
+  <a class="anchor" href="#homemade-kubernetes-cluster">#</a>
+</h1>
+<p>In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&rsquo;t a 5 minutes task I&rsquo;ll describe here the steps I went through to get it working.</p>
+<h2 id="pre-checks">
+  Pre-checks
+  <a class="anchor" href="#pre-checks">#</a>
+</h2>
+<p>Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&rsquo;ll be used as a reference here.</p>
+<p>If you go to the 
+  <a href="https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md">Kubernetes Changelogs</a> page and look for <strong>Docker</strong> you&rsquo;ll spot the <strong>&ldquo;validated docker versions&rdquo;</strong>, as we can see, I could have upgraded to the version <strong>18.09</strong>, but in the end, I&rsquo;ve decided by <strong>18.6.2</strong>.</p>
+<p>Said that before installing Docker and Kubernetes it might be a good idea to upgrade your whole system if it is safe to do so.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/f14c30414898d411272ccea734a397ac.js"></script>
+<h2 id="docker">
+  Docker
+  <a class="anchor" href="#docker">#</a>
+</h2>
+<p>Once you determined which Docker version to install, before moving forward you need to keep a few details in mind such as the device architectures you also have the OS version. You may need to edit these details at your <code>sources.list</code> otherwise the downloaded packages won&rsquo;t work.</p>
+<ul>
+<li>If you have any device which the architecture <strong>is not</strong> <code>amd64</code>, remove <code>[arch=amd64]</code> from <strong>sources.list</strong>.</li>
+<li>Instead of $(lsb_release -cs) you can specify the OS release you want to target by hand if you want, <strong>eg: <code>xenial</code></strong>.</li>
+<li>Package version may look strange but it&rsquo;s correct, <strong>eg: <code>docker-ce=18.06.2~ce~3-0~ubuntu</code></strong>.</li>
+</ul>
+<p>Once you&rsquo;re done with the steps above you can add the repository keys so you won&rsquo;t get any harmful package by accident.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/6236d41a8555816bbc62e7951b639c44.js"></script>
+<p>Now is time to include the sources list per se, please notice the two options below, the first one is for anything that is <strong>not</strong> <code>ARM</code>, the second one for <code>ARM</code> architectures.</p>
+<p><strong>Anything but ARM</strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/28e8e36dac729be8155612de9ab1ca14.js"></script>
+<p><strong>ARM</strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/03decdaa56f006a087004416b2090f79.js"></script>
+<p>Install Docker</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/8d2b54148e5fd3031bec2d245d21929d.js"></script>
+<p>Setup Docker daemon</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/2905dfc061af89d71261cd3832950e75.js"></script>
+<p>Restart Docker</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/57fb2b1da63012fec122cb168b2921f1.js"></script>
+<p>At this point, we should have a Docker version fully compliant with Kubernetes, up and running.</p>
+<h3 id="docker-compose">
+  Docker Compose
+  <a class="anchor" href="#docker-compose">#</a>
+</h3>
+<p>Since we&rsquo;re installing Docker, just in case you decide to spin up a <code>docker-compose</code> for some reason, let&rsquo;s install it as well. The points of attention are similar to the one used during the Docker installation.</p>
+<p><strong>Anything but ARM</strong></p>
+<script src="https://gist.github.com/allandequeiroz-snippets/5c3569a267beba69a4e01116c63b0045.js"></script>
+<p><strong>ARM</strong></p>
+<p>The process to have <code>docker-compose</code> at the <code>ARM</code> platform was a bit more complicated, at least for me, but is not so complicated, here are the steps I went through:</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/96fd18d139a32001d4efc12892a4f2a7.js"></script> 
+<h3 id="docker-compose-bash-autocompletion">
+  Docker Compose bash autocompletion
+  <a class="anchor" href="#docker-compose-bash-autocompletion">#</a>
+</h3>
+<p>Now that you have <code>docker-compose</code> everywhere is time to set the autocompletion to spare a bit of your patience down the road with typing.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/79aa7d478cf2bd1cf3c39a30c29ecf61.js"></script>
+<h2 id="kubernetes">
+  Kubernetes
+  <a class="anchor" href="#kubernetes">#</a>
+</h2>
+<p>With a fully happy Docker running across all the devices, it is time to install Kubernetes.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/bb27bd76309beb4cd2ed2d3f69240968.js"></script>
+<h3 id="initialising-master-kubernetes">
+  Initialising Master Kubernetes
+  <a class="anchor" href="#initialising-master-kubernetes">#</a>
+</h3>
+<p>This step will be easier if you save the script below at your master host, execute, and let it do its job. You can run step-by-step by hand if you want, just like the ones before, this is up to you.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/e4d14fb168dbc1f52da780bb9f355b1e.js"></script>
+<p>By the end you&rsquo;ll see amongst the logged lines, one starting with <code>kubeadm join</code>, copy this whole line and execute across the other devices you have. The line I&rsquo;m talking about is similar to this:</p>
+<p><code>kubeadm join 192.168.1.2:6443 --token zd07uq.d91cxeg22nhwl6ti --discovery-token-ca-cert-hash sha256:551f848676f99621bbed06810d15532f69019398d18d475a0cbaa9e69ee9d195</code></p>
+<p>At this point you should have all your devices communicating with the manager, to check how is it going execute <code>kubectl get nodes -o wide</code> at the manager node, maybe the nodes are not ready yet, give it some time, they need to perform some tasks as well. Once you see something like the lines below, you&rsquo;re ready to go.</p>
+<script src="https://gist.github.com/allandequeiroz-snippets/731c7e4b54a1b06d9fb9ee0cecb2b9dd.js"></script>
+<h3 id="kubernetes-autocompletion">
+  Kubernetes autocompletion
+  <a class="anchor" href="#kubernetes-autocompletion">#</a>
+</h3>
+<p>Last but not least, <code>kubectl</code> completion, believe me, this one is a must-have, especially about the Pod&rsquo;s names, you won&rsquo;t want to copy and paste or even worse, type the names Kubernetes gives to the Pods.</p>
+<p>echo &ldquo;source &lt;(kubectl completion bash)&rdquo; &raquo; ~/.bashrc</p>
+<h2 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h2>
+<p>It was a short step-by-step on how to set up your Kubernetes cluster; I believe it&rsquo;ll be useful, especially if you have devices with different architectures. It may not be fully compatible with the scenario, but for sure it&rsquo;ll give you some ideas to solve your problems.</p>
+<p>Another thing, if you&rsquo;re looking to go beyond and have your bare metal Load balanced cluster, take a look at 
+  <a href="https://metallb.universe.tf/">MetalLb</a>. And do not forget to take a look at the 
+  <a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">Cluster Networking</a> page as well, the <code>kubernetes_master.sh</code> installed 
+  <a href="https://www.weave.works/oss/net/">Wave Net</a> for you but, you may want a different one.</p>
+<p>Hope it helps!</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){if(window.getSelection().toString())return;a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#homemade-kubernetes-cluster">Homemade Kubernetes Cluster</a>
+      <ul>
+        <li><a href="#pre-checks">Pre-checks</a></li>
+        <li><a href="#docker">Docker</a>
+          <ul>
+            <li><a href="#docker-compose">Docker Compose</a></li>
+            <li><a href="#docker-compose-bash-autocompletion">Docker Compose bash autocompletion</a></li>
+          </ul>
+        </li>
+        <li><a href="#kubernetes">Kubernetes</a>
+          <ul>
+            <li><a href="#initialising-master-kubernetes">Initialising Master Kubernetes</a></li>
+            <li><a href="#kubernetes-autocompletion">Kubernetes autocompletion</a></li>
+          </ul>
+        </li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

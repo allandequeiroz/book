@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>core java on Q</title>
+    <link>https://19xx.dev/tags/core-java/</link>
+    <description>Recent content in core java on Q</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/core-java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BuildingBlocks</title>
+      <link>https://19xx.dev/posts/0003-BuildingBlocks/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0003-BuildingBlocks/</guid>
+      <description>Olá!
+Today I would like to write a bit about Java Collections. I believe most of us that already played with Java know about the primary and most used classes in the Java Collections framework, at least ones that ever had an interview are familiar with, they are part of the default pack of questions that interviewers ask to check if you at least read about Java.
+But this post does not intend to talk about the different aspects of data structures, or when to use A or B, the idea is to speak briefly about collections in a concurrent context.</description>
+    </item>
+    
+  </channel>
+</rss>
