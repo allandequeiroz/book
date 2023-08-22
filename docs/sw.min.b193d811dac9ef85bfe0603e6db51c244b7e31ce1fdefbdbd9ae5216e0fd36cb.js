@@ -1,0 +1,1 @@
+navigator.serviceWorker&&navigator.serviceWorker.register("/book/posts/sw.js",{scope:"/book/posts/"})

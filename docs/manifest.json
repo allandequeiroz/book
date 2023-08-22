@@ -1,14 +1,14 @@
 {
   "name": "Q",
   "short_name": "Q",
-  "start_url": "/book/",
-  "scope": "/book/",
+  "start_url": "/book/posts/",
+  "scope": "/book/posts/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "/book/favicon.svg",
+      "src": "/book/posts/favicon.svg",
       "sizes": "512x512"
     }
   ]

@@ -2,7 +2,7 @@
 
 publishDir = "docs"
 
-baseURL = 'https://19xx.dev/book'
+baseURL = 'https://19xx.dev/book/posts'
 title = 'Q'
 theme = 'hugo-book'
 
@@ -33,8 +33,8 @@ enableGitInfo = false
   # (Optional, default docs) Specify root page to render child pages as menu.
   # Page is resoled by .GetPage function: https://gohugo.io/functions/getpage/
   # For backward compatibility you can set '*' to render all sections to menu. Acts same as '/'
-  BookSection = 'posts'
-
+  BookSection = '/'
+  
   # (Optional, default light) Sets color theme: light, dark or auto.
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
   BookTheme = 'light'
