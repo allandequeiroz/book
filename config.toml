@@ -18,7 +18,7 @@ enableGitInfo = false
 [markup.tableOfContents]
   startLevel = 1
 
-#[menu]
+[menu]
 #[[menu.before]]
 #  name = "Github"
 #    url = "https://github.com/alex-shpak/hugo-book" 
