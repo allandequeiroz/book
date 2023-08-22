@@ -11,17 +11,18 @@ This document is a brief primer on using Go templates.">
 <meta property="og:description" content="Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
 This document is a brief primer on using Go templates." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://19xx.dev/posts/posts/goisforlovers/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://19xx.dev/book/posts/goisforlovers/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-04-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2014-04-02T00:00:00+00:00" />
-<title>(Hu)go Template Primer | Q</title>
-<link rel="manifest" href="/posts/manifest.json">
-<link rel="icon" href="/posts/favicon.png" >
-<link rel="stylesheet" href="/posts/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
-  <script defer src="/posts/flexsearch.min.js"></script>
-  <script defer src="/posts/en.search.min.ee069248421f8043e4a59b9aa5c1c91a034357412919fe6118d8c26e8b8e95cd.js" integrity="sha256-7gaSSEIfgEPkpZuapcHJGgNDV0EpGf5hGNjCbouOlc0=" crossorigin="anonymous"></script>
 
-  <script defer src="/posts/sw.min.841d112881f756c4798a684d0a4a6e8be2ad879fff730e3e3fb7ff41ca73c5cb.js" integrity="sha256-hB0RKIH3VsR5imhNCkpui&#43;Kth5//cw4&#43;P7f/Qcpzxcs=" crossorigin="anonymous"></script>
+<title>(Hu)go Template Primer | Q</title>
+<link rel="manifest" href="/book/manifest.json">
+<link rel="icon" href="/book/favicon.png" >
+<link rel="stylesheet" href="/book/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
+  <script defer src="/book/flexsearch.min.js"></script>
+  <script defer src="/book/en.search.min.1c87e4277bcee247dfd6bff2eb59eaf48e5693f9b55268cf29eeec6e0819fdb2.js" integrity="sha256-HIfkJ3vO4kff1r/y61nq9I5Wk/m1UmjPKe7sbggZ/bI=" crossorigin="anonymous"></script>
+
+  <script defer src="/book/sw.min.672c53e823d8fb8b2d832256ff2daeb4d063664c46152d46d709a043e41be3c5.js" integrity="sha256-ZyxT6CPY&#43;4stgyJW/y2utNBjZkxGFS1G1wmgQ&#43;Qb48U=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -37,7 +38,7 @@ https://github.com/alex-shpak/hugo-book
         
   <nav>
 <h2 class="book-brand">
-  <a class="flex align-center" href="/posts/"><span>Q</span>
+  <a class="flex align-center" href="/book/"><span>Q</span>
   </a>
 </h2>
 
@@ -73,7 +74,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/posts/posts/creating-a-new-theme/" class="">Creating a New Theme</a>
+    <a href="/book/posts/creating-a-new-theme/" class="">Creating a New Theme</a>
   
 
         </li>
@@ -86,7 +87,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/posts/posts/migrate-from-jekyll/" class="">Migrating from Jekyll</a>
+    <a href="/book/posts/migrate-from-jekyll/" class="">Migrating from Jekyll</a>
   
 
         </li>
@@ -99,7 +100,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/posts/posts/goisforlovers/" class="active">(Hu)go Template Primer</a>
+    <a href="/book/posts/goisforlovers/" class="active">(Hu)go Template Primer</a>
   
 
         </li>
@@ -112,7 +113,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/posts/posts/hugoisforlovers/" class="">Getting Started with Hugo</a>
+    <a href="/book/posts/hugoisforlovers/" class="">Getting Started with Hugo</a>
   
 
         </li>
@@ -139,7 +140,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -151,14 +152,14 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/posts/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/book/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>(Hu)go Template Primer</strong>
 
   <label for="toc-control">
     
-    <img src="/posts/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/book/svg/toc.svg" class="book-icon" alt="Table of Contents" />
     
   </label>
 </div>
@@ -207,7 +208,7 @@ https://github.com/alex-shpak/hugo-book
       
 <article class="markdown">
   <h1>
-    <a href="/posts/posts/goisforlovers/">(Hu)go Template Primer</a>
+    <a href="/book/posts/goisforlovers/">(Hu)go Template Primer</a>
   </h1>
   
   <h5>April 2, 2014</h5>
@@ -217,19 +218,19 @@ https://github.com/alex-shpak/hugo-book
   
   <div>
     
-      <a href="/posts/categories/Development/">Development</a>, 
-      <a href="/posts/categories/golang/">golang</a>
+      <a href="/book/categories/Development/">Development</a>, 
+      <a href="/book/categories/golang/">golang</a>
   </div>
   
 
   
   <div>
     
-      <a href="/posts/tags/go/">go</a>, 
-      <a href="/posts/tags/golang/">golang</a>, 
-      <a href="/posts/tags/templates/">templates</a>, 
-      <a href="/posts/tags/themes/">themes</a>, 
-      <a href="/posts/tags/development/">development</a>
+      <a href="/book/tags/go/">go</a>, 
+      <a href="/book/tags/golang/">golang</a>, 
+      <a href="/book/tags/templates/">templates</a>, 
+      <a href="/book/tags/themes/">themes</a>, 
+      <a href="/book/tags/development/">development</a>
   </div>
   
 
@@ -464,11 +465,11 @@ doesn&rsquo;t make a lot of sense. We&rsquo;ve defined a variable in our front m
 of some pages to turn off the TOC from being displayed.</p>
 <p>Here is the example front matter:</p>
 <pre tabindex="0"><code>---
-title: &#34;Permalinks&#34;
-date: &#34;2013-11-18&#34;
+title: &quot;Permalinks&quot;
+date: &quot;2013-11-18&quot;
 aliases:
-  - &#34;/doc/permalinks/&#34;
-groups: [&#34;extras&#34;]
+  - &quot;/doc/permalinks/&quot;
+groups: [&quot;extras&quot;]
 groups_weight: 30
 notoc: true
 ---
@@ -486,32 +487,32 @@ notoc: true
 <p>In your top-level configuration file (eg, <code>config.yaml</code>) you can define site
 parameters, which are values which will be available to you in chrome.</p>
 <p>For instance, you might declare:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">params</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">CopyrightHTML</span>: <span style="color:#e6db74">&#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TwitterUser</span>: <span style="color:#e6db74">&#34;spf13&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">SidebarRecentLimit</span>: <span style="color:#ae81ff">5</span>
-</span></span></code></pre></div><p>Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">params</span>:
+  <span style="color:#f92672">CopyrightHTML</span>: <span style="color:#e6db74">&#34;Copyright &amp;#xA9; 2013 John Doe. All Rights Reserved.&#34;</span>
+  <span style="color:#f92672">TwitterUser</span>: <span style="color:#e6db74">&#34;spf13&#34;</span>
+  <span style="color:#f92672">SidebarRecentLimit</span>: <span style="color:#ae81ff">5</span>
+</code></pre></div><p>Within a footer layout, you might then declare a <code>&lt;footer&gt;</code> which is only
 provided if the <code>CopyrightHTML</code> parameter is provided, and if it is given,
 you would declare it to be HTML-safe, so that the HTML entity is not escaped
 again.  This would let you easily update just your top-level config file each
 January 1st, instead of hunting through your templates.</p>
 <pre tabindex="0"><code>{{if .Site.Params.CopyrightHTML}}&lt;footer&gt;
-&lt;div class=&#34;text-center&#34;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
+&lt;div class=&quot;text-center&quot;&gt;{{.Site.Params.CopyrightHTML | safeHtml}}&lt;/div&gt;
 &lt;/footer&gt;{{end}}
 </code></pre><p>An alternative way of writing the &ldquo;if&rdquo; and then referencing the same value
 is to use &ldquo;with&rdquo; instead. With rebinds the context <code>.</code> within its scope,
 and skips the block if the variable is absent:</p>
-<pre tabindex="0"><code>{{with .Site.Params.TwitterUser}}&lt;span class=&#34;twitter&#34;&gt;
-&lt;a href=&#34;https://twitter.com/{{.}}&#34; rel=&#34;author&#34;&gt;
-&lt;img src=&#34;/images/twitter.png&#34; width=&#34;48&#34; height=&#34;48&#34; title=&#34;Twitter: {{.}}&#34;
- alt=&#34;Twitter&#34;&gt;&lt;/a&gt;
+<pre tabindex="0"><code>{{with .Site.Params.TwitterUser}}&lt;span class=&quot;twitter&quot;&gt;
+&lt;a href=&quot;https://twitter.com/{{.}}&quot; rel=&quot;author&quot;&gt;
+&lt;img src=&quot;/images/twitter.png&quot; width=&quot;48&quot; height=&quot;48&quot; title=&quot;Twitter: {{.}}&quot;
+ alt=&quot;Twitter&quot;&gt;&lt;/a&gt;
 &lt;/span&gt;{{end}}
 </code></pre><p>Finally, if you want to pull &ldquo;magic constants&rdquo; out of your layouts, you can do
 so, such as in this example:</p>
-<pre tabindex="0"><code>&lt;nav class=&#34;recent&#34;&gt;
+<pre tabindex="0"><code>&lt;nav class=&quot;recent&quot;&gt;
   &lt;h1&gt;Recent Posts&lt;/h1&gt;
   &lt;ul&gt;{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
-    &lt;li&gt;&lt;a href=&#34;{{.RelPermalink}}&#34;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;{{.RelPermalink}}&quot;&gt;{{.Title}}&lt;/a&gt;&lt;/li&gt;
   {{end}}&lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre></article>
@@ -530,7 +531,7 @@ so, such as in this example:</p>
 
 
 
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){if(window.getSelection().toString())return;a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
 
 
  
