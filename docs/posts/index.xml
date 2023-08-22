@@ -23,8 +23,7 @@ So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blo
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0003-BuildingBlocks/</guid>
-      <description>Olá!
-Today I would like to write a bit about Java Collections. I believe most of us that already played with Java know about the primary and most used classes in the Java Collections framework, at least ones that ever had an interview are familiar with, they are part of the default pack of questions that interviewers ask to check if you at least read about Java.
+      <description>Today I would like to write a bit about Java Collections. I believe most of us that already played with Java know about the primary and most used classes in the Java Collections framework, at least ones that ever had an interview are familiar with, they are part of the default pack of questions that interviewers ask to check if you at least read about Java.
 But this post does not intend to talk about the different aspects of data structures, or when to use A or B, the idea is to speak briefly about collections in a concurrent context.</description>
     </item>
     
@@ -55,8 +54,7 @@ Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and 
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0002-ThreadSafety/</guid>
-      <description>Olá!
-A few days ago I ended up into this StackOverflow thread from almost seven years ago, this guy was getting inconsistent results from a multithread code. Well, looked like an excellent excuse to recall some topics and do some new research.
+      <description>A few days ago I ended up into this StackOverflow thread from almost seven years ago, this guy was getting inconsistent results from a multithread code. Well, looked like an excellent excuse to recall some topics and do some new research.
 To start with, let&amp;rsquo;s just quickly remember the differences between Multiprogramming, Multiprocessing, Multitasking, and Multithreading.
 Multiprogramming #  In a multiprogramming environment more than one program can be loaded to the main memory, but only one will use the CPU to execute instructions, inside this sort of environment programs that are not using CPU are waiting their turn, but off course this is not acceptable, imagine if the same program hold the CPU for 1h?</description>
     </item>
@@ -67,8 +65,7 @@ Multiprogramming #  In a multiprogramming environment more than one program can 
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0001-Websockets/</guid>
-      <description>Olá!
-Today post is about a small experiment using Spring 5 to play with WebFux, I&amp;rsquo;ve used it to create a small WebSocket controller to &amp;ldquo;simulate&amp;rdquo; an e-mail inbox. The idea was to send some dummy text to the backend, persist it on MongoDB and from time to time check for new messages and send it to the clients connected to the WebSocket endpoint.
+      <description>Today post is about a small experiment using Spring 5 to play with WebFux, I&amp;rsquo;ve used it to create a small WebSocket controller to &amp;ldquo;simulate&amp;rdquo; an e-mail inbox. The idea was to send some dummy text to the backend, persist it on MongoDB and from time to time check for new messages and send it to the clients connected to the WebSocket endpoint.
 The Cast #  Let&amp;rsquo;s see an overview of all actors involved in this small experiment.</description>
     </item>
     

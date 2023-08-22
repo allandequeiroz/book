@@ -14,8 +14,6 @@ categories = [
 draft = false
 +++
 
-Olá!
-
 Today post is about a small experiment using [Spring 5](https://spring.io/) to play with [WebFux](https://docs.spring.io/spring/docs/5.0.0.BUILD-SNAPSHOT/spring-framework-reference/html/web-reactive.html), I've used it to create a small WebSocket controller to "simulate" an e-mail inbox. The idea was to send some dummy text to the backend, persist it on [MongoDB](https://www.mongodb.com/) and from time to time check for new messages and send it to the clients connected to the WebSocket endpoint.
 
 ## The Cast

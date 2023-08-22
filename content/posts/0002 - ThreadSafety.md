@@ -13,8 +13,6 @@ categories = [
 draft = false
 +++
 
-Olá! 
-
 A few days ago I ended up into this [StackOverflow thread](https://stackoverflow.com/questions/7384875/what-is-wrong-with-this-thread-safe-byte-sequence-generator/7387782) from almost seven years ago, this guy was getting inconsistent results from a multithread code. Well, looked like an excellent excuse to recall some topics and do some new research.
 
 To start with, let's just quickly remember the differences between Multiprogramming, Multiprocessing, Multitasking, and Multithreading.
