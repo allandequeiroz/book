@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Q</title>
+    <title>Tags on 19xx</title>
     <link>https://19xx.dev/tags/</link>
-    <description>Recent content in Tags on Q</description>
+    <description>Recent content in Tags on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -39,15 +39,6 @@
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jackson</title>
-      <link>https://19xx.dev/tags/jackson/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/tags/jackson/</guid>
       <description></description>
     </item>
     

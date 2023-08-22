@@ -14,8 +14,6 @@ categories = [
 draft = false
 +++
 
-Olá! 
-
 Inspired by the posts from [Viktor Adam's](https://blog.viktoradam.net/) blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
 
 So far I have my two little devices a [Raspberry Pi](https://www.raspberrypi.org/) and a [Rock64](https://www.armbian.com/rock64/) hosting this blog, yes, that's right, you're reading this straight from a [Ghost](https://ghost.org/) blog behind an [NGinx](https://nginx.org/en/) hosted at my home, be nice and say hi!
@@ -108,30 +106,3 @@ Ok. Now you need to push something new to your repository or Trigger the build f
 After all this effort you deserve some badges, you can get one straight from your `Travis account`, just ask for the `.svg` file related to your repository. Travis update it after each build so take care to not break the build :)
 
 `https://api.travis-ci.org/allandequeiroz/cloudflare-ddns.svg`
-
-## Microbadger badges
-
-To have some badges from your Docker hub account you can use [Microbadger](https://microbadger.com/), once again Sign Up using your GitHub account and link it to your Docker Hub account, after few seconds you'll have some badges waiting for you, in this case, `version` *the architecture* and `layers` *amount of layers of your image*.
-
-```
-https://images.microbadger.com/badges/version/allandequeiroz/cloudflare-ddns.svg
-https://images.microbadger.com/badges/image/allandequeiroz/cloudflare-ddns.svg
-```
-
-## Showing off your badges
-
-In the end, you can use something like the lines below to display your badges on your `README.md` files anywhere.
-
-
-<pre class="line-numbers language-markdown">
-<code>[![Travis](https://api.travis-ci.org/allandequeiroz/cloudflare-ddns.svg)](https://travis-ci.org/allandequeiroz/cloudflare-ddns)
-
-[![](https://images.microbadger.com/badges/version/allandequeiroz/cloudflare-ddns.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/allandequeiroz/cloudflare-ddns.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns "Get your own image badge on microbadger.com")
-
-[![](https://images.microbadger.com/badges/version/allandequeiroz/cloudflare-ddns:amd64.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns:amd64 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/allandequeiroz/cloudflare-ddns:amd64.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns:amd64 "Get your own image badge on microbadger.com")
-</code></pre>
-
-
-[![Travis](https://api.travis-ci.org/allandequeiroz/cloudflare-ddns.svg)](https://travis-ci.org/allandequeiroz/cloudflare-ddns)[![](https://images.microbadger.com/badges/version/allandequeiroz/cloudflare-ddns.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/allandequeiroz/cloudflare-ddns.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/allandequeiroz/cloudflare-ddns:amd64.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns:amd64 "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/allandequeiroz/cloudflare-ddns:amd64.svg)](https://microbadger.com/images/allandequeiroz/cloudflare-ddns:amd64 "Get your own image badge on microbadger.com")

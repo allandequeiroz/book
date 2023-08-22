@@ -11,7 +11,7 @@ categories = [
     "software",
     "devops"
 ]
-draft = false
+draft = true
 +++
 
 # How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home).

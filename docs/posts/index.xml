@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Q</title>
+    <title>Posts on 19xx</title>
     <link>https://19xx.dev/posts/</link>
-    <description>Recent content in Posts on Q</description>
+    <description>Recent content in Posts on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -12,9 +12,9 @@
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</guid>
-      <description>Olá!
-Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
-So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&amp;rsquo;s right, you&amp;rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!</description>
+      <description>Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
+So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&amp;rsquo;s right, you&amp;rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!
+ Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.</description>
     </item>
     
     <item>
@@ -36,26 +36,6 @@ But this post does not intend to talk about the different aspects of data struct
       <guid>https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/</guid>
       <description>Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&amp;rsquo;t a 5 minutes task I&amp;rsquo;ll describe here the steps I went through to get it working.
 Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&amp;rsquo;ll be used as a reference here.</description>
-    </item>
-    
-    <item>
-      <title>Jackson field converters</title>
-      <link>https://19xx.dev/posts/0008-Jackson-field-converters/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/posts/0008-Jackson-field-converters/</guid>
-      <description>Custom serialisation with Jackson at field level #  Quick one to not forget since is quite useful. How to specify custom serializers at field level.
-The example here is a bit ridiculous but a few days ago I needed it for a real scenario and was quite hand so, ignore the example since I couldn&amp;rsquo;t think about anything better and keep your focus on how handy it may be.</description>
-    </item>
-    
-    <item>
-      <title>Jenkins&#43;Kubernetes</title>
-      <link>https://19xx.dev/posts/0007-Jenkins&#43;Kubernetes/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/posts/0007-Jenkins&#43;Kubernetes/</guid>
-      <description>How to Setup Scalable Jenkins on Top of a Kubernetes Cluster (At Home). #   Before we start, I&amp;rsquo;ll make some intro about the scenario and reasons for my choices, if you prefer, skip this part, the meat of the article starts at the Docker section.
- A few days ago I decided to start a new side project, a tool that will take care of a bunch of things I need; I pay for different ones, and yet they don&amp;rsquo;t cover everything I need.</description>
     </item>
     
     <item>

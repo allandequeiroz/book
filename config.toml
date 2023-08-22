@@ -3,7 +3,7 @@
 publishDir = "docs"
 
 baseURL = 'https://19xx.dev'
-title = 'Q'
+title = '19xx'
 theme = 'hugo-book'
 
 # Book configuration

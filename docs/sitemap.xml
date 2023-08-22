@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://19xx.dev/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
@@ -32,16 +35,7 @@
     <loc>https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://19xx.dev/tags/jackson/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://19xx.dev/posts/0008-Jackson-field-converters/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://19xx.dev/tags/java/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://19xx.dev/posts/0007-Jenkins&#43;Kubernetes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://19xx.dev/tags/kubernetes/</loc>
@@ -51,9 +45,6 @@
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://19xx.dev/posts/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://19xx.dev/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://19xx.dev/categories/software/</loc>

@@ -10,7 +10,7 @@ categories = [
     "software",
     "devops"
 ]
-draft = false
+draft = true
 +++
 
 # Custom serialisation with Jackson at field level
