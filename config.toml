@@ -10,10 +10,6 @@ theme = 'hugo-book'
 disablePathToLower = true
 enableGitInfo = false
 
-# (Optional) Set Google Analytics if you use it to track your website.
-# Always put it on the top of the configuration file, otherwise it won't work
-googleAnalytics = "G-DFRRKVT2JH"
-
 # (Optional) If you provide a Disqus shortname, comments will be enabled on
 # all pages.
 disqusShortname = "19xx"
