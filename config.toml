@@ -2,7 +2,7 @@
 
 publishDir = "docs"
 
-baseURL = 'https://19xx.dev/book'
+baseURL = 'https://19xx.dev'
 title = 'Q'
 theme = 'hugo-book'
 
