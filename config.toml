@@ -18,7 +18,7 @@ enableGitInfo = false
 [markup.tableOfContents]
   startLevel = 1
 
-[menu]
+#[menu]
 #[[menu.before]]
 #  name = "Github"
 #    url = "https://github.com/alex-shpak/hugo-book" 
@@ -54,7 +54,7 @@ enableGitInfo = false
 
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
-  # BookMenuBundle = '/menu'
+  BookMenuBundle = '/menu'
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
