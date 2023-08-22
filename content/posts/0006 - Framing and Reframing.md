@@ -6,7 +6,7 @@ tags = [
     "organizational behaviour",
     "management"
 ]
-date = "2017-06-10"
+date = "2023-08-22"
 categories = [
     "management",
 ]
