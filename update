@@ -1,1 +1,1 @@
-rm -fr docs ; hugo ; git add . ; git commit -m "$(date)" ; git push
+mv docs/CNAME . ; rm -fr docs ; hugo ; mv CNAME docs ; git add . ; git commit -m "$(date)" ; git push
