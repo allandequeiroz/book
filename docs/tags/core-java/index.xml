@@ -5,11 +5,11 @@
     <link>https://19xx.dev/tags/core-java/</link>
     <description>Recent content in core java on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 02 Feb 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/core-java/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/core-java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BuildingBlocks</title>
       <link>https://19xx.dev/posts/0003-BuildingBlocks/</link>
-      <pubDate>Mon, 02 Feb 2015 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0003-BuildingBlocks/</guid>
       <description>Today I would like to write a bit about Java Collections. I believe most of us that already played with Java know about the primary and most used classes in the Java Collections framework, at least ones that ever had an interview are familiar with, they are part of the default pack of questions that interviewers ask to check if you at least read about Java.

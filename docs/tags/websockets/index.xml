@@ -5,11 +5,11 @@
     <link>https://19xx.dev/tags/websockets/</link>
     <description>Recent content in websockets on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/websockets/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/websockets/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Websockets</title>
       <link>https://19xx.dev/posts/0001-Websockets/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 02 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0001-Websockets/</guid>
       <description>Today post is about a small experiment using Spring 5 to play with WebFux, I&amp;rsquo;ve used it to create a small WebSocket controller to &amp;ldquo;simulate&amp;rdquo; an e-mail inbox. The idea was to send some dummy text to the backend, persist it on MongoDB and from time to time check for new messages and send it to the clients connected to the WebSocket endpoint.
