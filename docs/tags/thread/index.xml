@@ -5,11 +5,11 @@
     <link>https://19xx.dev/tags/thread/</link>
     <description>Recent content in thread on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/thread/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/thread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ThreadSafety</title>
       <link>https://19xx.dev/posts/0002-ThreadSafety/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Aug 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0002-ThreadSafety/</guid>
       <description>A few days ago I ended up into this StackOverflow thread from almost seven years ago, this guy was getting inconsistent results from a multithread code. Well, looked like an excellent excuse to recall some topics and do some new research.

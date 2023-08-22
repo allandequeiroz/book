@@ -16,7 +16,7 @@
 <link rel="icon" href="/favicon.png" >
 <link rel="stylesheet" href="/book.min.33a48f5432973b8ff9a82679d9e45d67f2c15d4399bd2829269455cfe390b5e8.css" integrity="sha256-M6SPVDKXO4/5qCZ52eRdZ/LBXUOZvSgpJpRVz&#43;OQteg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.40434395d7ff1c08382087116da81bf27724125db39367db20ecbca91d229ba4.js" integrity="sha256-QENDldf/HAg4IIcRbagb8nckEl2zk2fbIOy8qR0im6Q=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.896470cbbda2f74ce534847cd107fe588be92b1cc49f06134016519b5c363288.js" integrity="sha256-iWRwy72i90zlNIR80Qf&#43;WIvpKxzEnwYTQBZRm1w2Mog=" crossorigin="anonymous"></script>
 
   <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
 <link rel="alternate" type="application/rss+xml" href="https://19xx.dev/posts/index.xml" title="19xx" />
@@ -114,13 +114,13 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
-          <a href="/categories/engineering/">engineering</a>
-          <span>3</span>
+          <a href="/categories/software/">software</a>
+          <span>6</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/categories/software/">software</a>
-          <span>6</span>
+          <a href="/categories/engineering/">engineering</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -133,18 +133,8 @@ https://github.com/alex-shpak/hugo-book
       <ul>
       
         <li class="flex justify-between">
-          <a href="/tags/container/">container</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
           <a href="/tags/containers/">containers</a>
           <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/core-java/">core java</a>
-          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -153,12 +143,27 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
+          <a href="/tags/kubernetes/">kubernetes</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/terraform/">terraform</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/core-java/">core java</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
           <a href="/tags/java/">java</a>
           <span>2</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/kubernetes/">kubernetes</a>
+          <a href="/tags/thread/">thread</a>
           <span>1</span>
         </li>
       
@@ -173,22 +178,17 @@ https://github.com/alex-shpak/hugo-book
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/terraform/">terraform</a>
+          <a href="/tags/websockets/">websockets</a>
           <span>1</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/thread/">thread</a>
+          <a href="/tags/container/">container</a>
           <span>1</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/travis.ci/">travis.ci</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/websockets/">websockets</a>
           <span>1</span>
         </li>
       
@@ -210,10 +210,10 @@ https://github.com/alex-shpak/hugo-book
   
   <article class="markdown book-post">
     <h2>
-      <a href="/posts/0000-Building-Docker-images-on-Travis.ci/">Building Docker images on Travis.ci</a>
+      <a href="/posts/0005-Home-made-Kubernetes-cluster/">Home made Kubernetes cluster</a>
     </h2>
     
-  <h5>April 2, 2014</h5>
+  <h5>June 10, 2015</h5>
 
 
 
@@ -229,18 +229,54 @@ https://github.com/alex-shpak/hugo-book
   <div>
     
       <a href="/tags/docker/">docker</a>, 
-      <a href="/tags/container/">container</a>, 
-      <a href="/tags/travis.ci/">travis.ci</a>
+      <a href="/tags/kubernetes/">kubernetes</a>, 
+      <a href="/tags/containers/">containers</a>
   </div>
   
 
 
 
 
-    <p>Inspired by the posts from Viktor Adam&rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
-So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&rsquo;s right, you&rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!
- Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.
-        <a href="/posts/0000-Building-Docker-images-on-Travis.ci/">...</a>
+    <p>Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&rsquo;t a 5 minutes task I&rsquo;ll describe here the steps I went through to get it working.
+Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&rsquo;ll be used as a reference here.
+        <a href="/posts/0005-Home-made-Kubernetes-cluster/">...</a>
+      
+    </p>
+  </article>
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/0004-Terraform/">Terraform</a>
+    </h2>
+    
+  <h5>April 8, 2015</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/software/">software</a>, 
+      <a href="/categories/devops/">devops</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/docker/">docker</a>, 
+      <a href="/tags/containers/">containers</a>, 
+      <a href="/tags/terraform/">terraform</a>
+  </div>
+  
+
+
+
+
+    <p>TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
+Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
+Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&rsquo;m moving to a new place, so I have a new excuse to play with something else.
+        <a href="/posts/0004-Terraform/">...</a>
       
     </p>
   </article>
@@ -250,7 +286,7 @@ So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blo
       <a href="/posts/0003-BuildingBlocks/">BuildingBlocks</a>
     </h2>
     
-  <h5>April 2, 2014</h5>
+  <h5>February 2, 2015</h5>
 
 
 
@@ -282,83 +318,10 @@ But this post does not intend to talk about the different aspects of data struct
   
   <article class="markdown book-post">
     <h2>
-      <a href="/posts/0006-Home-made-Kubernetes-cluster/">Home made Kubernetes cluster</a>
-    </h2>
-    
-  <h5>April 2, 2014</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/categories/software/">software</a>, 
-      <a href="/categories/devops/">devops</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/docker/">docker</a>, 
-      <a href="/tags/kubernetes/">kubernetes</a>, 
-      <a href="/tags/containers/">containers</a>
-  </div>
-  
-
-
-
-
-    <p>Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&rsquo;t a 5 minutes task I&rsquo;ll describe here the steps I went through to get it working.
-Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&rsquo;ll be used as a reference here.
-        <a href="/posts/0006-Home-made-Kubernetes-cluster/">...</a>
-      
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
-      <a href="/posts/0005-Terraform/">Terraform</a>
-    </h2>
-    
-  <h5>April 2, 2014</h5>
-
-
-
-  
-  <div>
-    
-      <a href="/categories/software/">software</a>, 
-      <a href="/categories/devops/">devops</a>
-  </div>
-  
-
-  
-  <div>
-    
-      <a href="/tags/docker/">docker</a>, 
-      <a href="/tags/containers/">containers</a>, 
-      <a href="/tags/terraform/">terraform</a>
-  </div>
-  
-
-
-
-
-    <p>TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
-Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
-Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&rsquo;m moving to a new place, so I have a new excuse to play with something else.
-        <a href="/posts/0005-Terraform/">...</a>
-      
-    </p>
-  </article>
-  
-  <article class="markdown book-post">
-    <h2>
       <a href="/posts/0002-ThreadSafety/">ThreadSafety</a>
     </h2>
     
-  <h5>April 2, 2014</h5>
+  <h5>August 8, 2014</h5>
 
 
 
@@ -425,6 +388,43 @@ The Cast #  Let&rsquo;s see an overview of all actors involved in this small exp
     </p>
   </article>
   
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/0000-Building-Docker-images-on-Travis.ci/">Building Docker images on Travis.ci</a>
+    </h2>
+    
+  <h5>January 2, 2014</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/software/">software</a>, 
+      <a href="/categories/devops/">devops</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/docker/">docker</a>, 
+      <a href="/tags/container/">container</a>, 
+      <a href="/tags/travis.ci/">travis.ci</a>
+  </div>
+  
+
+
+
+
+    <p>Inspired by the posts from Viktor Adam&rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
+So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&rsquo;s right, you&rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!
+ Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.
+        <a href="/posts/0000-Building-Docker-images-on-Travis.ci/">...</a>
+      
+    </p>
+  </article>
+  
 
   
  
@@ -474,13 +474,13 @@ The Cast #  Let&rsquo;s see an overview of all actors involved in this small exp
         </li>
       
         <li class="flex justify-between">
-          <a href="/categories/engineering/">engineering</a>
-          <span>3</span>
+          <a href="/categories/software/">software</a>
+          <span>6</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/categories/software/">software</a>
-          <span>6</span>
+          <a href="/categories/engineering/">engineering</a>
+          <span>3</span>
         </li>
       
       </ul>
@@ -493,18 +493,8 @@ The Cast #  Let&rsquo;s see an overview of all actors involved in this small exp
       <ul>
       
         <li class="flex justify-between">
-          <a href="/tags/container/">container</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
           <a href="/tags/containers/">containers</a>
           <span>2</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/core-java/">core java</a>
-          <span>1</span>
         </li>
       
         <li class="flex justify-between">
@@ -513,12 +503,27 @@ The Cast #  Let&rsquo;s see an overview of all actors involved in this small exp
         </li>
       
         <li class="flex justify-between">
+          <a href="/tags/kubernetes/">kubernetes</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/terraform/">terraform</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
+          <a href="/tags/core-java/">core java</a>
+          <span>1</span>
+        </li>
+      
+        <li class="flex justify-between">
           <a href="/tags/java/">java</a>
           <span>2</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/kubernetes/">kubernetes</a>
+          <a href="/tags/thread/">thread</a>
           <span>1</span>
         </li>
       
@@ -533,22 +538,17 @@ The Cast #  Let&rsquo;s see an overview of all actors involved in this small exp
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/terraform/">terraform</a>
+          <a href="/tags/websockets/">websockets</a>
           <span>1</span>
         </li>
       
         <li class="flex justify-between">
-          <a href="/tags/thread/">thread</a>
+          <a href="/tags/container/">container</a>
           <span>1</span>
         </li>
       
         <li class="flex justify-between">
           <a href="/tags/travis.ci/">travis.ci</a>
-          <span>1</span>
-        </li>
-      
-        <li class="flex justify-between">
-          <a href="/tags/websockets/">websockets</a>
           <span>1</span>
         </li>
       

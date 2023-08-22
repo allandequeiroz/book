@@ -5,11 +5,11 @@
     <link>https://19xx.dev/tags/travis.ci/</link>
     <description>Recent content in travis.ci on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/travis.ci/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Jan 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/travis.ci/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building Docker images on Travis.ci</title>
       <link>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
       
       <guid>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</guid>
       <description>Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.

@@ -5,37 +5,37 @@
     <link>https://19xx.dev/tags/docker/</link>
     <description>Recent content in docker on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building Docker images on Travis.ci</title>
-      <link>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</guid>
-      <description>Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
-So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&amp;rsquo;s right, you&amp;rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!
- Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.</description>
-    </item>
-    
+    <lastBuildDate>Wed, 10 Jun 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Home made Kubernetes cluster</title>
-      <link>https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <link>https://19xx.dev/posts/0005-Home-made-Kubernetes-cluster/</link>
+      <pubDate>Wed, 10 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/posts/0006-Home-made-Kubernetes-cluster/</guid>
+      <guid>https://19xx.dev/posts/0005-Home-made-Kubernetes-cluster/</guid>
       <description>Homemade Kubernetes Cluster #  In my previous post, I wrote about how to set up a scalable Jenkins using Kubernetes at home on top of home devices, in my case, 3 Raspberries, 2 Rock64 and a NUC. Since it wasn&amp;rsquo;t a 5 minutes task I&amp;rsquo;ll describe here the steps I went through to get it working.
 Pre-checks #  Before installing Kubernetes you better check which Docker version is supported by the Kubernetes version you intend to install, a few days ago I upgraded my Kubernetes cluster from version 12 to 15 so, version 15 is what I&amp;rsquo;ll be used as a reference here.</description>
     </item>
     
     <item>
       <title>Terraform</title>
-      <link>https://19xx.dev/posts/0005-Terraform/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <link>https://19xx.dev/posts/0004-Terraform/</link>
+      <pubDate>Wed, 08 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://19xx.dev/posts/0005-Terraform/</guid>
+      <guid>https://19xx.dev/posts/0004-Terraform/</guid>
       <description>TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
 Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
 Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&amp;rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&amp;rsquo;m moving to a new place, so I have a new excuse to play with something else.</description>
+    </item>
+    
+    <item>
+      <title>Building Docker images on Travis.ci</title>
+      <link>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</link>
+      <pubDate>Thu, 02 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</guid>
+      <description>Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
+So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&amp;rsquo;s right, you&amp;rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!
+ Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.</description>
     </item>
     
   </channel>
