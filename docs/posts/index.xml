@@ -5,7 +5,21 @@
     <link>https://19xx.dev/posts/</link>
     <description>Recent content in Posts on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 22 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A parte final</title>
+      <link>https://19xx.dev/posts/0007-A-parte-final/</link>
+      <pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0007-A-parte-final/</guid>
+      <description>A parte final #  ( https://waitbutwhy.com/2015/12/the-tail-end.html)[11 de dezembro de 2015 Por Tim Urban]
+ Em uma postagem no ano passado, apresentamos visualmente a expectativa de vida humana. Por anos:
+ Por meses:
+ E por semanas:
+ Enquanto trabalhava nesse post, também fiz um gráfico de dias, mas parecia um pouco demais, então deixei de fora.
+ O gráfico dos dias me surpreendeu tanto quanto o gráfico das semanas. Cada um desses pontos representa apenas uma terça, sexta ou domingo, mas mesmo uma pessoa sortuda que vive até os 90 anos não terá problemas em encaixar todos os dias de sua vida em [uma folha de papel]( https://waitbutwhy.</description>
+    </item>
+    
     <item>
       <title>Framing and Reframing</title>
       <link>https://19xx.dev/posts/0006-Framing-and-Reframing/</link>
