@@ -13,7 +13,7 @@ draft = false
 
 # A parte final
 
-(https://waitbutwhy.com/2015/12/the-tail-end.html)[11 de dezembro de 2015 Por Tim Urban]
+[11 de dezembro de 2015 Por Tim Urban](https://waitbutwhy.com/2015/12/the-tail-end.html)
 
 [Em uma postagem no ano passado](https://waitbutwhy.com/2014/05/life-weeks.html), apresentamos visualmente a expectativa de vida humana. Por anos:
 
