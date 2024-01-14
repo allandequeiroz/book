@@ -8,7 +8,7 @@ date = "2023-08-28"
 categories = [
     "reflexao",
 ]
-draft = false
+draft = true
 +++
 
 # A parte final
