@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Useful accounting formulae">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Formulae" />
+<meta property="og:description" content="Useful accounting formulae" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://19xx.dev/posts/0009-Formulae/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-14T00:00:00+00:00" />
+<title>Formulae | 19xx</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="stylesheet" href="/book.min.f994dcda4539d2bab4c688d340ae448b274fe984611b59312e8bc93b4a4f57c5.css" integrity="sha256-&#43;ZTc2kU50rq0xojTQK5EiydP6YRhG1kxLovJO0pPV8U=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.5c81aa1de20c8116b5689571ddd36ea7f1f2a849a4decc1c95398c6e0c73ecf4.js" integrity="sha256-XIGqHeIMgRa1aJVx3dNup/HyqEmk3swclTmMbgxz7PQ=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+            ],
+        });
+    });
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DFRRKVT2JH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DFRRKVT2JH');
+</script>'
+
+
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>19xx</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Formulae</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/0009-Formulae/">Formulae</a>
+  </h1>
+  
+  <h5>January 14, 2024</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/finance/">finance</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/finance/">finance</a>, 
+      <a href="/tags/formulae/">formulae</a>
+  </div>
+  
+
+
+
+<details>
+      <summary>Profitability</summary>
+<table>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Judgment Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ROSF (%)</strong><br>= NP / Equity * 100</td>
+<td>$\frac{NP}{\text{Equity}} \times 100$</td>
+<td>Measures how much profit is generated from shareholders&rsquo; equity.</td>
+<td>Higher values indicate better performance.</td>
+</tr>
+<tr>
+<td><strong>ROCE (%)</strong><br>= PBIT / CE * 100</td>
+<td>$\frac{PBIT}{\text{CE}} \times 100$</td>
+<td>Indicates how well the company is using its capital to generate profit.</td>
+<td>Higher values are preferable, showing efficient use of capital.</td>
+</tr>
+<tr>
+<td><strong>Operating profit margin (%)</strong><br>= PBIT / SR * 100</td>
+<td>$\frac{PBIT}{\text{SR}} \times 100$</td>
+<td>Shows the percentage of sales that has turned into profits.</td>
+<td>Higher margins indicate better cost management.</td>
+</tr>
+<tr>
+<td><strong>Gross margin (%)</strong><br>= COGS / SR</td>
+<td>$\frac{COGS}{\text{SR}}$</td>
+<td>Reflects the cost of goods sold as a percentage of sales.</td>
+<td>Lower values suggest higher efficiency and profitability.</td>
+</tr>
+<tr>
+<td><strong>Gross profit margin (%)</strong><br>= GP / SR * 100</td>
+<td>$\frac{GP}{\text{SR}} \times 100$</td>
+<td>Indicates the percentage of sales revenue that exceeds the cost of goods sold.</td>
+<td>Higher percentages demonstrate strong sales and pricing strategies.</td>
+</tr>
+<tr>
+<td><strong>Return on equity (RoE) (%)</strong><br>= NP / Equity * 100</td>
+<td>$\frac{NP}{\text{equity}} \times 100$</td>
+<td>Similar to ROSF, measures profitability generated from shareholders&rsquo; equity.</td>
+<td>Higher values suggest efficient use of equity.</td>
+</tr>
+<tr>
+<td><strong>Profit margin (%)</strong><br>= PBIT / SR * 100</td>
+<td>$\frac{PBIT}{\text{SR}} \times 100$</td>
+<td>Indicates net profit margin after operating costs.</td>
+<td>Higher margins reflect better overall profitability.</td>
+</tr>
+<tr>
+<td><strong>Capital productivity</strong><br>= SR / CE</td>
+<td>$\frac{SR}{\text{CE}}$</td>
+<td>Shows how effectively sales are generated from the capital employed.</td>
+<td>Higher figures suggest more efficient capital use.</td>
+</tr>
+<tr>
+<td><strong>Return on sales (ROS)</strong><br>= PBIT / SR</td>
+<td>$\frac{PBIT}{\text{SR}}$</td>
+<td>Measures how much operating profit is made from total sales.</td>
+<td>Higher values indicate operational efficiency.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+      <summary>ROCE Breakdown (Pyramid)</summary>
+<table>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Judgment Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Profit Margin (%)</strong><br>= PBIT / SR * 100</td>
+<td>$\frac{\text{PBIT}}{\text{SR}} \times 100$</td>
+<td>Measures the percentage of profit generated from sales revenue.</td>
+<td>Higher is better; indicates profitability.</td>
+</tr>
+<tr>
+<td><strong>GP / SR</strong><br>= GP / SR</td>
+<td>$\frac{\text{GP}}{\text{SR}}$</td>
+<td>Gross Profit to Sales Ratio, shows the percentage of sales revenue that is gross profit.</td>
+<td>Higher is better; suggests cost efficiency.</td>
+</tr>
+<tr>
+<td><strong>Expenses / SR</strong><br>= Expenses / SR</td>
+<td>$\frac{\text{Expenses}}{\text{SR}}$</td>
+<td>Measures the percentage of sales revenue that goes towards expenses.</td>
+<td>Lower is better; indicates cost control.</td>
+</tr>
+<tr>
+<td><strong>Asset Utilisation</strong><br>= SR / CE</td>
+<td>$\frac{\text{SR}}{\text{CE}}$</td>
+<td>Measures how effectively the company&rsquo;s capital employed is used to generate sales.</td>
+<td>Higher is better; indicates efficient use of assets.</td>
+</tr>
+<tr>
+<td><strong>SR / FA</strong><br>= SR / FA</td>
+<td>$\frac{\text{SR}}{\text{FA}}$</td>
+<td>Sales to Fixed Assets Ratio, indicates how effectively fixed assets are generating sales.</td>
+<td>Higher is better; suggests asset efficiency.</td>
+</tr>
+<tr>
+<td><strong>SR / CA</strong><br>= SR / CA</td>
+<td>$\frac{\text{SR}}{\text{CA}}$</td>
+<td>Sales to Current Assets Ratio, shows how efficiently current assets are used to generate sales.</td>
+<td>Higher is better; indicates liquidity and operational efficiency.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+      <summary>Efficiency</summary>
+<table>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Judgment Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Average Inventory Days (ID)</strong><br>= Inventory * 365 / COGS</td>
+<td>$\frac{\text{Inventory} \times 365}{\text{COGS}}$</td>
+<td>Measures the average number of days inventory is held before sold.</td>
+<td>Lower is better, indicates efficient turnover.</td>
+</tr>
+<tr>
+<td><strong>Average Trade Receivable Days (RD)</strong><br>= TR / SR * 365</td>
+<td>$\frac{\text{TR}}{\text{SR}} \times 365$</td>
+<td>Measures the average number of days to collect payment after a sale.</td>
+<td>Lower is better, indicates faster collection.</td>
+</tr>
+<tr>
+<td><strong>Average Trade Receivables (ATR)</strong><br>= (BTR + ETR) / 2</td>
+<td>$\frac{\text{BTR} + \text{ETR}}{2}$</td>
+<td>The average amount of money owed to a company by its debtors.</td>
+<td>Depends on context; high might suggest sales growth or slow collection.</td>
+</tr>
+<tr>
+<td><strong>Average Settlement Period for Trade Receivables</strong><br>= ATR / CSR * 365</td>
+<td>$\frac{\text{ATR}}{\text{CSR}} \times 365$</td>
+<td>The average number of days taken to receive payment from customers.</td>
+<td>Lower is better; too high could indicate collection issues.</td>
+</tr>
+<tr>
+<td><strong>Daily Usage of Inventory (DUI)</strong><br>= COGS / 365</td>
+<td>$\frac{\text{COGS}}{365}$</td>
+<td>The daily cost of goods sold, a measure of inventory usage.</td>
+<td>Higher usage indicates higher sales or lower efficiency.</td>
+</tr>
+<tr>
+<td><strong>Inventory Held (Days) (AIH)</strong><br>= Inventory / DUI</td>
+<td>$\frac{\text{Inventory}}{\text{DUI}}$</td>
+<td>The average number of days worth of inventory on hand.</td>
+<td>Lower is better, indicates efficient inventory management.</td>
+</tr>
+<tr>
+<td><strong>Sales to Capital Employed</strong><br>= SR / CE</td>
+<td>$\frac{\text{SR}}{\text{CE}}$</td>
+<td>Measures how effectively a company is using its capital to generate sales.</td>
+<td>Higher is better, indicates efficient use of capital.</td>
+</tr>
+<tr>
+<td><strong>Sales to Fixed Assets</strong><br>= SR / FA</td>
+<td>$\frac{\text{SR}}{\text{FA}}$</td>
+<td>Measures how well a company is using its fixed assets to generate sales.</td>
+<td>Higher is better, indicates efficient use of fixed assets.</td>
+</tr>
+<tr>
+<td><strong>Sales to Current Assets</strong><br>= SR / CA</td>
+<td>$\frac{\text{SR}}{\text{CA}}$</td>
+<td>Measures how well a company uses its current assets to generate sales.</td>
+<td>Higher is better, indicates liquidity and operational efficiency.</td>
+</tr>
+<tr>
+<td><strong>Daily Sales</strong><br>= SR / 365</td>
+<td>$\frac{\text{SR}}{365}$</td>
+<td>The average daily sales revenue.</td>
+<td>Higher is better, indicates strong daily revenue performance.</td>
+</tr>
+<tr>
+<td><strong>Expenses to Sales</strong><br>= Expenses / SR</td>
+<td>$\frac{\text{Expenses}}{\text{SR}}$</td>
+<td>The ratio of total expenses to total sales revenue.</td>
+<td>Lower is better, indicates cost efficiency.</td>
+</tr>
+<tr>
+<td><strong>Expenses to Sales Ratio</strong><br>= (GP - PBIT) / SR</td>
+<td>$\frac{(\text{GP} - \text{PBIT})}{\text{SR}}$</td>
+<td>Measures the proportion of gross profit that is consumed by operating expenses.</td>
+<td>Lower is better, indicates profitability.</td>
+</tr>
+<tr>
+<td><strong>Fixed Asset Productivity</strong><br>= SR / FA</td>
+<td>$\frac{\text{SR}}{\text{FA}}$</td>
+<td>Measures how productive a company&rsquo;s fixed assets are at generating sales.</td>
+<td>Higher is better, suggests assets are well-utilized.</td>
+</tr>
+<tr>
+<td><strong>Working Capital Days</strong><br>= ID + RD - PD</td>
+<td>$\text{ID} + \text{RD} - \text{PD}$</td>
+<td>Measures the net days of working capital cycle.</td>
+<td>Lower is better, indicates a shorter cash conversion cycle.</td>
+</tr>
+<tr>
+<td><strong>Average Inventories Turnover Period</strong><br>= AIH / SR * 365</td>
+<td>$\frac{\text{AIH}}{\text{SR}} \times 365$</td>
+<td>Measures the number of days it takes for inventory to turn over.</td>
+<td>Lower is better, suggests faster inventory turnover.</td>
+</tr>
+<tr>
+<td><strong>Sales Revenue to Capital Employed</strong><br>= SR / (SC + reserves + NCL)</td>
+<td>$\frac{\text{SR}}{(\text{SC} + \text{reserves} + \text{NCL})}$</td>
+<td>Measures how efficiently a company generates sales from its capital employed.</td>
+<td>Higher is better, suggests effective use of capital.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+      <summary>Liquidity</summary>
+<table>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Judgment Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Current Ratio (times)</strong><br>= CA / CL</td>
+<td>$\frac{\text{CA}}{\text{CL}}$</td>
+<td>Measures the company&rsquo;s ability to pay short-term obligations.</td>
+<td>Higher than 1 is good; indicates liquidity.</td>
+</tr>
+<tr>
+<td><strong>Gearing Ratio</strong><br>= debt / equity * 100</td>
+<td>$\frac{\text{debt}}{\text{equity}} \times 100$</td>
+<td>Indicates the degree to which a company&rsquo;s operations are funded by debt compared to shareholders&rsquo; equity.</td>
+<td>Lower is better; suggests less financial risk.</td>
+</tr>
+<tr>
+<td><strong>Interest Cover Ratio (times)</strong><br>= PBIT / IP</td>
+<td>$\frac{\text{PBIT}}{\text{IP}}$</td>
+<td>Measures how easily a company can pay interest on its outstanding debt.</td>
+<td>Higher is better; indicates ability to cover interest payments.</td>
+</tr>
+<tr>
+<td><strong>Liquidity Ratio (acid test)</strong><br>= (CA - Inventory) / CL</td>
+<td>$\frac{(\text{CA} - \text{Inventory})}{\text{CL}}$</td>
+<td>Measures the company&rsquo;s ability to pay off its current liabilities without relying on the sale of inventory.</td>
+<td>Higher is better; indicates strong liquidity without inventory.</td>
+</tr>
+<tr>
+<td><strong>Working Capital Ratio (days)</strong><br>= ID / (RD - PD)</td>
+<td>$\frac{\text{ID}}{(\text{RD} - \text{PD})}$</td>
+<td>The net days of working capital cycle.</td>
+<td>Lower is better; indicates efficiency and quicker cash conversion.</td>
+</tr>
+<tr>
+<td><strong>Working Capital (WC)</strong><br>= CA - CL</td>
+<td>$\text{CA} - \text{CL}$</td>
+<td>The capital available in the short term to run day-to-day operations.</td>
+<td>Positive is necessary; indicates the company can cover short-term liabilities.</td>
+</tr>
+<tr>
+<td><strong>Working Capital Productivity</strong><br>= Sales / WC</td>
+<td>$\frac{\text{Sales}}{\text{WC}}$</td>
+<td>Measures how effectively the company uses its working capital to generate sales.</td>
+<td>Higher is better; indicates efficient use of working capital.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+      <summary>Investment</summary>
+<table>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Judgment Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Earnings Available to Ordinary Shareholders (EOS)</strong><br>= NP - PD</td>
+<td>$\text{NP} - \text{PD}$</td>
+<td>Net profit available to common shareholders after preferred dividends.</td>
+<td>Higher is better; indicates profitability.</td>
+</tr>
+<tr>
+<td><strong>Earnings per share (EPS)</strong><br>= EOS / NS * 100</td>
+<td>$\frac{\text{EOS}}{\text{NS}} \times 100$</td>
+<td>Profit allocated to each outstanding share of common stock.</td>
+<td>Higher is better; indicates higher profitability per share.</td>
+</tr>
+<tr>
+<td><strong>Annual Earnings Per Share Growth (EPSG)</strong><br>= All EPS years / number of years</td>
+<td>$\text{All EPS years} / \text{number of years}$</td>
+<td>The compound growth rate of EPS over a specified period.</td>
+<td>Higher is better; indicates consistent growth in profitability.</td>
+</tr>
+<tr>
+<td><strong>Earnings Available for Common Shareholder (ECS)</strong><br>= NP - PD</td>
+<td>$\text{NP} - \text{PD}$</td>
+<td>Same as EOS; earnings available for distribution to common shareholders.</td>
+<td>Higher is better; indicates more earnings available.</td>
+</tr>
+<tr>
+<td><strong>Dividend payout ratio</strong><br>= DY / ECS * 100</td>
+<td>$\frac{\text{DY}}{\text{ECS}} \times 100$</td>
+<td>The percentage of earnings paid to shareholders as dividends.</td>
+<td>Higher may indicate generous dividends; too high could suggest unsustainable dividend policy.</td>
+</tr>
+<tr>
+<td><strong>Dividend yield %</strong><br>= DS / SMV * 100</td>
+<td>$\frac{\text{DS}}{\text{SMV}} \times 100$</td>
+<td>The dividend per share divided by the share price, expressed as a percentage.</td>
+<td>Higher is better; indicates better return on investment.</td>
+</tr>
+<tr>
+<td><strong>P/E ratio (PE)</strong><br>= SMV / EPS</td>
+<td>$\frac{\text{SMV}}{\text{EPS}}$</td>
+<td>The share price relative to the earnings per share.</td>
+<td>Lower is better; indicates potential undervaluation.</td>
+</tr>
+<tr>
+<td><strong>P/B ratio (PB)</strong><br>= Market price per share / Book value per share</td>
+<td>$\frac{\text{Market price per share}}{\text{Book value per share}}$</td>
+<td>A P/B ratio under 1 can indicate that the stock is undervalued, or the company might be facing problems. Conversely, a higher P/B ratio can either indicate an overvalued stock or reflect investors&rsquo; expectations of future growth.</td>
+<td>It&rsquo;s important to consider the P/B ratio in the context of a company&rsquo;s overall financial health, the industry it operates in, and the market conditions.</td>
+</tr>
+<tr>
+<td><strong>Dividend cover ratio</strong><br>= ECS / DY</td>
+<td>$\frac{\text{ECS}}{\text{DY}}$</td>
+<td>The number of times a company could pay dividends out of its net profit.</td>
+<td>Higher is better; indicates the ability to maintain or grow dividends.</td>
+</tr>
+<tr>
+<td><strong>Price/Earnings to Growth (PEG)</strong><br>= PE / EPSB</td>
+<td>$\frac{\text{PE}}{\text{EPSB}}$</td>
+<td>A stock&rsquo;s P/E ratio divided by the growth rate of its earnings.</td>
+<td>Lower is better; suggests the stock may be undervalued relative to its earnings growth.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+      <summary>Broader Picture</summary>
+<table>
+<thead>
+<tr>
+<th>Ratio</th>
+<th>Formula</th>
+<th>Meaning</th>
+<th>Judgment Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Comparison to sector</strong></td>
+<td>$\frac{\text{PE}}{\text{sector PE}}$</td>
+<td>Compares the company&rsquo;s P/E ratio to the industry average.</td>
+<td>Ratios below the sector average may indicate undervaluation.</td>
+</tr>
+<tr>
+<td><strong>Sector to market</strong></td>
+<td>$\frac{\text{Sector PE}}{\text{market PE}}$</td>
+<td>Compares the sector&rsquo;s average P/E ratio to that of the broader market.</td>
+<td>A higher ratio suggests the sector may be overvalued relative to the market.</td>
+</tr>
+</tbody>
+</table>
+</details></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "19xx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

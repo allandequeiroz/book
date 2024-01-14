@@ -6,7 +6,16 @@
     <description>Recent content in Categories on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>finance</title>
+      <link>https://19xx.dev/categories/finance/</link>
+      <pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/categories/finance/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>reflexao</title>
       <link>https://19xx.dev/categories/reflexao/</link>

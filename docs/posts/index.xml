@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Formulae</title>
+      <link>https://19xx.dev/posts/0009-Formulae/</link>
+      <pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://19xx.dev/posts/0009-Formulae/</guid>
+      <description>ProfitabilityRatio Formula Meaning Judgment Criteria ROSF (%)
+= NP / Equity * 100 $\frac{NP}{\text{Equity}} \times 100$ Measures how much profit is generated from shareholders&amp;rsquo; equity. Higher values indicate better performance. ROCE (%)
+= PBIT / CE * 100 $\frac{PBIT}{\text{CE}} \times 100$ Indicates how well the company is using its capital to generate profit. Higher values are preferable, showing efficient use of capital. Operating profit margin (%)
+= PBIT / SR * 100 $\frac{PBIT}{\text{SR}} \times 100$ Shows the percentage of sales that has turned into profits.</description>
+    </item>
+    
     <item>
       <title>A parte final</title>
       <link>https://19xx.dev/posts/0007-A-parte-final/</link>
