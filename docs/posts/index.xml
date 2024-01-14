@@ -6,17 +6,7 @@
     <description>Recent content in Posts on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Formulae</title>
-      <link>https://19xx.dev/posts/0008-Formulae/</link>
-      <pubDate>Sun, 14 Jan 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://19xx.dev/posts/0008-Formulae/</guid>
-      <description>$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$
-ExpandColumn 1 Column 2 Column 3 Column 4 Data 1.1 $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$ Data 1.3 Data 1.4 Data 2.1 Data 2.2 Data 2.3 Data 2.4 Data 3.1 Data 3.2 $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$ Data 3.4 </description>
-    </item>
-    
+    <lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A parte final</title>
       <link>https://19xx.dev/posts/0007-A-parte-final/</link>
