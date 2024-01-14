@@ -13,8 +13,7 @@ draft = false
 math = true
 +++
 
-<details>
-      <summary>Profitability</summary>
+## Profitability
 
 | Ratio                                           | Formula                                 | Meaning                                                    | Judgment Criteria                      |
 |-------------------------------------------------|-----------------------------------------|------------------------------------------------------------|----------------------------------------|
@@ -27,11 +26,8 @@ math = true
 | **Profit margin (%)**<br>= PBIT / SR * 100      | $\frac{PBIT}{\text{SR}} \times 100$     | Indicates net profit margin after operating costs. | Higher margins reflect better overall profitability. |
 | **Capital productivity**<br>= SR / CE           | $\frac{SR}{\text{CE}}$                  | Shows how effectively sales are generated from the capital employed. | Higher figures suggest more efficient capital use. |
 | **Return on sales (ROS)**<br>= PBIT / SR        | $\frac{PBIT}{\text{SR}}$                | Measures how much operating profit is made from total sales. | Higher values indicate operational efficiency. |
-</details>
 
-<details>
-      <summary>ROCE Breakdown (Pyramid)</summary>
-
+## ROCE Breakdown (Pyramid)
 | Ratio                                         | Formula                      | Meaning                                                      | Judgment Criteria                          |
 |-----------------------------------------------|------------------------------|--------------------------------------------------------------|--------------------------------------------|
 | **Profit Margin (%)**<br>= PBIT / SR * 100    | $\frac{\text{PBIT}}{\text{SR}} \times 100$ | Measures the percentage of profit generated from sales revenue. | Higher is better; indicates profitability. |
@@ -40,11 +36,8 @@ math = true
 | **Asset Utilisation**<br>= SR / CE            | $\frac{\text{SR}}{\text{CE}}$              | Measures how effectively the company's capital employed is used to generate sales. | Higher is better; indicates efficient use of assets. |
 | **SR / FA**<br>= SR / FA                      | $\frac{\text{SR}}{\text{FA}}$              | Sales to Fixed Assets Ratio, indicates how effectively fixed assets are generating sales. | Higher is better; suggests asset efficiency. |
 | **SR / CA**<br>= SR / CA                      | $\frac{\text{SR}}{\text{CA}}$              | Sales to Current Assets Ratio, shows how efficiently current assets are used to generate sales. | Higher is better; indicates liquidity and operational efficiency. |
-</details>
 
-<details>
-      <summary>Efficiency</summary>
-
+## Efficiency
 | Ratio                                                 | Formula                                | Meaning                                                          | Judgment Criteria                        |
 |-------------------------------------------------------|----------------------------------------|------------------------------------------------------------------|------------------------------------------|
 | **Average Inventory Days (ID)**<br>= Inventory * 365 / COGS | $\frac{\text{Inventory} \times 365}{\text{COGS}}$ | Measures the average number of days inventory is held before sold. | Lower is better, indicates efficient turnover. |
@@ -63,11 +56,8 @@ math = true
 | **Working Capital Days**<br>= ID + RD - PD          | $\text{ID} + \text{RD} - \text{PD}$              | Measures the net days of working capital cycle.                    | Lower is better, indicates a shorter cash conversion cycle. |
 | **Average Inventories Turnover Period**<br>= AIH / SR * 365 | $\frac{\text{AIH}}{\text{SR}} \times 365$  | Measures the number of days it takes for inventory to turn over.   | Lower is better, suggests faster inventory turnover. |
 | **Sales Revenue to Capital Employed**<br>= SR / (SC + reserves + NCL) | $\frac{\text{SR}}{(\text{SC} + \text{reserves} + \text{NCL})}$ | Measures how efficiently a company generates sales from its capital employed. | Higher is better, suggests effective use of capital. |
-</details>
 
-<details>
-      <summary>Liquidity</summary>
-
+## Liquidity
 | Ratio                                           | Formula                           | Meaning                                                               | Judgment Criteria                                 |
 |-------------------------------------------------|-----------------------------------|-----------------------------------------------------------------------|---------------------------------------------------|
 | **Current Ratio (times)**<br>= CA / CL          | $\frac{\text{CA}}{\text{CL}}$     | Measures the company's ability to pay short-term obligations.          | Higher than 1 is good; indicates liquidity.       |
@@ -77,11 +67,8 @@ math = true
 | **Working Capital Ratio (days)**<br>= ID / (RD - PD) | $\frac{\text{ID}}{(\text{RD} - \text{PD})}$ | The net days of working capital cycle.                                   | Lower is better; indicates efficiency and quicker cash conversion. |
 | **Working Capital (WC)**<br>= CA - CL           | $\text{CA} - \text{CL}$           | The capital available in the short term to run day-to-day operations.   | Positive is necessary; indicates the company can cover short-term liabilities. |
 | **Working Capital Productivity**<br>= Sales / WC | $\frac{\text{Sales}}{\text{WC}}$  | Measures how effectively the company uses its working capital to generate sales. | Higher is better; indicates efficient use of working capital. |
-</details>
 
-<details>
-      <summary>Investment</summary>
-
+## Investment
 | Ratio                               | Formula                         | Meaning                                                  | Judgment Criteria                   |
 |-------------------------------------|---------------------------------|----------------------------------------------------------|-------------------------------------|
 | **Earnings Available to Ordinary Shareholders (EOS)**<br>= NP - PD | $\text{NP} - \text{PD}$ | Net profit available to common shareholders after preferred dividends. | Higher is better; indicates profitability. |
@@ -94,13 +81,9 @@ math = true
 | **P/B ratio (PB)**<br>= Market price per share / Book value per share | $\frac{\text{Market price per share}}{\text{Book value per share}}$ | A P/B ratio under 1 can indicate that the stock is undervalued, or the company might be facing problems. Conversely, a higher P/B ratio can either indicate an overvalued stock or reflect investors' expectations of future growth. | It's important to consider the P/B ratio in the context of a company's overall financial health, the industry it operates in, and the market conditions. |
 | **Dividend cover ratio**<br>= ECS / DY | $\frac{\text{ECS}}{\text{DY}}$             | The number of times a company could pay dividends out of its net profit. | Higher is better; indicates the ability to maintain or grow dividends. |
 | **Price/Earnings to Growth (PEG)**<br>= PE / EPSB | $\frac{\text{PE}}{\text{EPSB}}$         | A stock's P/E ratio divided by the growth rate of its earnings. | Lower is better; suggests the stock may be undervalued relative to its earnings growth. |
-</details>
 
-<details>
-      <summary>Broader Picture</summary>
-
+## Broader Picture
 | Ratio                | Formula                     | Meaning                                             | Judgment Criteria                                               |
 |----------------------|-----------------------------|-----------------------------------------------------|-----------------------------------------------------------------|
 | **Comparison to sector** | $\frac{\text{PE}}{\text{sector PE}}$ | Compares the company's P/E ratio to the industry average. | Ratios below the sector average may indicate undervaluation. |
 | **Sector to market**     | $\frac{\text{Sector PE}}{\text{market PE}}$ | Compares the sector's average P/E ratio to that of the broader market. | A higher ratio suggests the sector may be overvalued relative to the market. |
-</details>
