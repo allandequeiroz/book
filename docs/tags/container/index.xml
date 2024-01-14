@@ -5,6 +5,7 @@
     <link>https://19xx.dev/tags/container/</link>
     <description>Recent content in container on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Sat, 02 Jan 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/container/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building Docker images on Travis.ci</title>
@@ -14,7 +15,7 @@
       <guid>https://19xx.dev/posts/0000-Building-Docker-images-on-Travis.ci/</guid>
       <description>Inspired by the posts from Viktor Adam&amp;rsquo;s blog, when I have some spare time I have been playing with Docker and some open source tools to build this blog.
 So far I have my two little devices a Raspberry Pi and a Rock64 hosting this blog, yes, that&amp;rsquo;s right, you&amp;rsquo;re reading this straight from a Ghost blog behind an NGinx hosted at my home, be nice and say hi!
- Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.</description>
+Appart of some details like sensible public data management and external CI usage to generate and publish Docker images that is the subject of this post, this is how my stack looks like right now.</description>
     </item>
     
   </channel>

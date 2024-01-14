@@ -5,6 +5,7 @@
     <link>https://19xx.dev/tags/terraform/</link>
     <description>Recent content in terraform on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Sat, 08 Apr 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terraform</title>
@@ -14,7 +15,7 @@
       <guid>https://19xx.dev/posts/0004-Terraform/</guid>
       <description>TLDR; A walk through an EC2 instance setup, dynamically attaching volumes snapshots and configuring Cloudflare DNS entries pointing to the new instance using Terraform and Docker (Ghost, Traefik).
 Source code: https://github.com/allandequeiroz/blog/tree/extract_variables
-Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. #  For a while, I&amp;rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&amp;rsquo;m moving to a new place, so I have a new excuse to play with something else.</description>
+Basic infrastructure configuration using Terraform, Docker (Ghost, Traefik) and Cloudflare. # For a while, I&amp;rsquo;ve hosted this blog, at home, using Docker and Kubernetes across a few Raspberries (I use it as an excuse to do play around). It turns out that I&amp;rsquo;m moving to a new place, so I have a new excuse to play with something else.</description>
     </item>
     
   </channel>

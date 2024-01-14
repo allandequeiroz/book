@@ -5,6 +5,7 @@
     <link>https://19xx.dev/tags/thread/</link>
     <description>Recent content in thread on 19xx</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
     <lastBuildDate>Mon, 08 Aug 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://19xx.dev/tags/thread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ThreadSafety</title>
@@ -14,7 +15,7 @@
       <guid>https://19xx.dev/posts/0002-ThreadSafety/</guid>
       <description>A few days ago I ended up into this StackOverflow thread from almost seven years ago, this guy was getting inconsistent results from a multithread code. Well, looked like an excellent excuse to recall some topics and do some new research.
 To start with, let&amp;rsquo;s just quickly remember the differences between Multiprogramming, Multiprocessing, Multitasking, and Multithreading.
-Multiprogramming #  In a multiprogramming environment more than one program can be loaded to the main memory, but only one will use the CPU to execute instructions, inside this sort of environment programs that are not using CPU are waiting their turn, but off course this is not acceptable, imagine if the same program hold the CPU for 1h?</description>
+Multiprogramming # In a multiprogramming environment more than one program can be loaded to the main memory, but only one will use the CPU to execute instructions, inside this sort of environment programs that are not using CPU are waiting their turn, but off course this is not acceptable, imagine if the same program hold the CPU for 1h?</description>
     </item>
     
   </channel>
